@@ -1,4 +1,5 @@
 import './WarehouseInventory.scss';
+import Header from '../Header/Header';
 
 function WarehouseInventory() {
     return (

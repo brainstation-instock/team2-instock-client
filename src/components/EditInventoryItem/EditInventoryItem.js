@@ -1,4 +1,5 @@
 import './EditInventoryItem.scss';
+import Header from '../Header/Header';
 
 function EditInventoryItem() {
     return (

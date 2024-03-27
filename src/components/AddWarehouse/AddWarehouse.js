@@ -1,4 +1,5 @@
 import './AddWarehouse.scss';
+import Header from '../Header/Header';
 
 function AddWarehouse() {
     return (

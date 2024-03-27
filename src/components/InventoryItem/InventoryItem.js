@@ -1,4 +1,5 @@
-import './InventoryItem.scss'
+import './InventoryItem.scss';
+import Header from '../Header/Header';
 
 function InventoryItem() {
     return (

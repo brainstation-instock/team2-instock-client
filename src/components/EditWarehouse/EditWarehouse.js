@@ -1,4 +1,5 @@
 import './EditWarehouse.scss';
+import Header from '../Header/Header';
 
 function EditWarehouse() {
     return (

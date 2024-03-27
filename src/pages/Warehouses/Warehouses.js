@@ -1,9 +1,11 @@
+import Header from '../../components/Header/Header';
 import './Warehouses.scss';
 
 function Warehouses() {
     return (
         <>
-        <h1>Warehouses Page</h1>
+            <Header  isWarehouse={true}/>
+            <h1>Warehouses Page</h1>
         </>
     )
 }

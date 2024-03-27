@@ -20,7 +20,11 @@
     BUTTONS & FORM FIELDS
 ============================*/
 
-button, input {
+ul {
+    list-style: none;
+}
+
+button, input, .button {
     height: 2.25rem;
     max-height: 2.25rem;
     border-radius: 1.25rem;

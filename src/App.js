@@ -28,7 +28,6 @@ function App() {
         <Route path='*' element={<Navigate to='/notfound' />} />
       </Routes>
     </BrowserRouter>
-    <input type="text" placeholder="This is a test"></input>
     </>
   );
 }

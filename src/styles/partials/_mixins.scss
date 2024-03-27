@@ -1,0 +1,73 @@
+@use './variables' as *;
+
+/*==================
+    RESPONSIVENESS
+===================*/
+
+// Mobile
+@mixin mobile {
+    @media (min-width: $mobile-breakpoint) and (max-width: 767px) {
+       @content;
+    }
+}
+
+// Tablet & Desktop
+@mixin tablet {
+    @media (min-width: $tablet-breakpoint) {
+       @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-breakpoint) {
+       @content;
+    }
+}
+
+/*=============
+    PADDING
+==============*/
+
+// Mobile
+@mixin padding-mobile {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+// Tablet & Desktop
+@mixin padding-tablet {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+@mixin padding-desktop {
+    padding-left: 3.9375rem;
+    padding-right: 3.9375rem;
+}
+
+// Top & Bottom
+@mixin pad-top-bottom($top, $bottom) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+}
+
+/*===============
+    TYPOGRAPHY
+================*/
+
+@mixin typography-style ($size, $height, $weight) {
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight; 
+}
+
+/*=============
+    FLEXBOX
+==============*/
+
+@mixin display ($direction, $justify, $wrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+}

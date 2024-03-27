@@ -1,0 +1,35 @@
+@use './styles/partials/mixins' as *;
+@use './styles/partials/typography' as *;
+@use './styles/partials/variables' as *;
+
+/*============
+    GLOBAL
+=============*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'TitilliumWeb', sans-serif;
+    color: $primary1;
+    @include mobile { @include typography-mobile };
+    @include tablet { @include typography-tab-desktop };
+}
+
+/*============================
+    BUTTONS & FORM FIELDS
+============================*/
+
+button, input {
+    height: 2.25rem;
+    max-height: 2.25rem;
+    border-radius: 1.25rem;
+    padding: 0 1rem;
+    @include mobile {
+        width: 100%;
+    }
+    @include tablet {
+        height: 2.375rem;
+        max-height: 2.375rem;
+    }
+}

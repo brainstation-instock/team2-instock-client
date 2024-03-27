@@ -4,8 +4,8 @@ import './Inventories.scss';
 function Inventories() {
     return (
         <>
-        <Header isWarehouse={false}/>
-        <h1>Inventories Page</h1>
+            <Header isWarehouse={false}/>
+            <h1>Inventories Page</h1>
         </>
     )
 }

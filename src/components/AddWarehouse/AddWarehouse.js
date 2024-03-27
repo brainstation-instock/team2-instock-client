@@ -3,7 +3,8 @@ import './AddWarehouse.scss';
 function AddWarehouse() {
     return (
         <>
-        <h1>Add Warehouse Component</h1>
+            <Header isWarehouse={true}/>
+            <h1>Add Warehouse Component</h1>
         </>
     )
 }

@@ -3,7 +3,8 @@ import './InventoryItem.scss'
 function InventoryItem() {
     return (
         <>
-        <h1>Inventory Item Component</h1>
+            <Header isWarehouse={false}/>
+            <h1>Inventory Item Component</h1>
         </>
     )
 }

@@ -3,7 +3,8 @@ import './WarehouseInventory.scss';
 function WarehouseInventory() {
     return (
         <>
-        <h1>Warehouse Inventory Component</h1>
+            <Header isWarehouse={false}/>
+            <h1>Warehouse Inventory Component</h1>
         </>
     )
 }

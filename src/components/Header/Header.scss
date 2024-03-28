@@ -30,6 +30,10 @@
             margin-top: 0;
             column-gap: 1.5rem;
         }
+
+        @include desktop{
+            padding-right: 1rem;
+        }
     }
 
     &__logo{

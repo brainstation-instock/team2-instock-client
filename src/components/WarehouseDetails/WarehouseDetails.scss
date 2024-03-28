@@ -1,2 +1,120 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
+
+.warehouse{
+
+    &__header{
+        align-items: center;
+        column-gap: 0.5rem;
+        display: flex;
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+
+        @include tablet{
+            padding: 2rem 2rem 1.3125rem 2rem;
+        }
+
+        @include desktop{
+            padding-left: 2.5rem;
+        }
+    }
+
+    &__edit{
+        border-radius: 20px;
+        padding: 0.5rem;
+        background-color: $primary2;
+        margin-left: auto;
+        align-items: center;
+
+        @include tablet{
+            padding: 0.5rem 1rem;
+        }
+    }
+
+    &__link{
+        display: flex;
+    }
+
+    &__text{
+        font-size: 0.8125rem;
+
+        @include tablet{
+            font-size: 0.875rem;
+        }
+    }
+
+    &__edit-img{
+        background-color: $primary3;
+        display: inline-block;
+        mask-image: url('../../assets/icons/edit-24px.svg');
+        min-width: 1.25rem;
+        min-height: 1.25rem;
+        max-width: 1.25rem;
+        max-height: 1.25rem;
+        mask-size: cover;
+        mask-position: center;
+    }
+
+    &__edit-txt{
+        display: none;
+        color: $primary3;
+        @include tablet{
+            display: inline-block;
+            margin-left: 0.25rem;
+        }
+    }
+
+    &__back{
+        display: flex;
+    }
+
+    &__label{
+        color: $secondary1;
+        font-weight: $bold;
+        margin-bottom: 0.25rem;
+    }
+
+    &__details{
+        border-top: 1px solid $secondary2;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem 1.5rem;
+        row-gap: 2.25rem;
+
+        @include tablet{
+            column-gap: 5.7%;
+            flex-wrap: nowrap;
+            width: 100%;
+            padding: 1.5rem 2rem;
+        }
+
+        @include desktop{
+            padding-left: 2.5rem;
+        }
+    }
+
+    &__physical{
+        width: 50%;
+    }
+
+    &__contact{
+        width: 50%;
+        font-style: normal;
+
+        @include tablet{
+            width: unset;
+        }
+
+        &--full{
+            width: 100%;
+
+            @include tablet{
+                width: 39.5%;
+                border-right: 1px solid $secondary2;
+            }
+
+            @include desktop{
+                width: 40.2%;
+            }
+        }
+    }
+}

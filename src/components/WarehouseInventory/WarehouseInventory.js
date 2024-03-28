@@ -9,8 +9,10 @@ function WarehouseInventory() {
 
     return (
         <>
-            <Header isWarehouse={false}/>
-            <WarehouseDetails id={id}/>
+            <Header isWarehouse={true}/>
+            <div className='details'>
+                <WarehouseDetails id={id}/>
+            </div>
         </>
     )
 }

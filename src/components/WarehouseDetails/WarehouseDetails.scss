@@ -93,7 +93,9 @@
     }
 
     &__physical{
-        width: 50%;
+        @include tablet{
+            max-width: 7.5rem;
+        }
     }
 
     &__contact{

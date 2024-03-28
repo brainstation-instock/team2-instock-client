@@ -1,20 +1,16 @@
-@use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/variables' as *;
-
+@use '../../../styles/partials/mixins' as *;
+@use '../../../styles/partials/variables' as *;
 article {
     z-index: 2;
     height: 100%;
     @include display (column, space-between, nowrap);
     background-color: $primary3;
 }
-
 section {
     z-index: 2;
     background-color: $primary3;
 }
-
 .delete {
-
     &__body {
         @include tablet {
             padding-left: 4rem;
@@ -22,24 +18,19 @@ section {
             padding-top: 1rem;
         }
     }
-
     &__cancel-button {
         border: 1px solid $secondary2;
-
         &:hover {
             border-color: $primary2;
             color: $primary2;
         }
-
         &--heading {
             color: $secondary1;
-
             &:hover {
                 color: $primary2;
             }
         }
     }
-
     &__close {
         display: flex;
         margin-left: auto;
@@ -49,7 +40,6 @@ section {
             padding-right: 1rem;
         }
     }
-
     &__container-buttons {
         @include display (row, flex-start, nowrap);
         gap: 1rem;
@@ -60,21 +50,17 @@ section {
             padding: 2rem 4rem 2.5rem 4rem;
         }
     }
-
     &__delete-button {
         background-color: $support2;
         border: none;
         color: $primary3;
-
         &:hover {
             background-color: $background1;
         }
-
         &--heading {
             color: $primary3;
         }
     }
-
     &__heading {
         padding-top: 1.25rem;
         padding-bottom: 1.5rem;
@@ -82,7 +68,6 @@ section {
             padding: 0 4rem;
         }
     }
-
     &__modal {
         @include padding-mobile;
         height: 100vh;
@@ -100,7 +85,6 @@ section {
             width: 55%;
         }
     }
-
     &__overlay {
         @include tablet {
             width: 100vw;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react' // imported React for toggleModal functionality
-import { useParams, NavLink, Link } from 'react-router-dom' // consolidated all react-router-dom calls
+import { NavLink, Link } from 'react-router-dom' // consolidated all react-router-dom calls
 import axios from 'axios'
 import searchIcon from '../../assets/icons/search-24px.svg'
 import deleteIcon from '../../assets/icons/delete_outline-24px.svg'
@@ -130,7 +130,7 @@ function WarehouseList() {
                                 </div>
                             </div>
                             {modal === warehouse.id && 
-                            <DeleteWarehouse toggleModal={closeModal} />}
+                            <DeleteWarehouse toggleModal={closeModal} warehouse={warehouse.warehouse_name} />}
                         </article>
                 ))
                     }

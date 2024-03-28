@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../../styles/components/DeleteModal/DeleteModal.scss';
 import close from '../../assets/icons/close-24px.svg';
 
-function DeleteWarehouse({ toggleModal }) {
+function DeleteWarehouse({ toggleModal, warehouse }) {
 
     // Button toggle events
     const handleCancel = () => {
@@ -20,8 +20,8 @@ function DeleteWarehouse({ toggleModal }) {
                 <article className='delete__modal'>
                     <section className='delete__container'>
                         <img className='delete__close' src={close} alt='close button' onClick={handleCancel} />
-                        <h1 className='delete__heading'>Delete Washington warehouse?</h1>
-                        <h5 className='delete__body'>Please confirm that you'd like to delete Washington from the list of warehouses. You won't be able to undo this action.</h5>
+                        <h1 className='delete__heading'>Delete {warehouse} warehouse?</h1>
+                        <h5 className='delete__body'>Please confirm that you'd like to delete {warehouse} from the list of warehouses. You won't be able to undo this action.</h5>
                     </section>
                     <section className='delete__container-buttons'>
                         <button className='delete__cancel-button' onClick={toggleModal}>Cancel</button>

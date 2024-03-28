@@ -60,22 +60,22 @@ function WarehouseList() {
         <section className="warehouses-list">
             <div className="warehouses-list__table-header">
                 <div div className="warehouses-list__table-header--warehouse">
-                    <h3>WAREHOUSE</h3>
+                    <h2>WAREHOUSE</h2>
                     <img alt='sort-icon' src={sortIcon}/>
                 </div>
                 <div div className="warehouses-list__table-header--address">
-                    <h3>ADDRESS</h3>
+                    <h2>ADDRESS</h2>
                     <img alt='sort-icon' src={sortIcon}/>
                 </div>
                 <div div className="warehouses-list__table-header--contact-name">
-                    <h3>CONTACT NAME</h3>
+                    <h2>CONTACT NAME</h2>
                     <img alt='sort-icon' src={sortIcon}/>
                 </div>
                 <div div className="warehouses-list__table-header--contact-info">
-                    <h3>CONTACT INFORMATION</h3>
+                    <h2>CONTACT INFORMATION</h2>
                     <img alt='sort-icon' src={sortIcon}/>
                 </div>
-                <h3 div className="warehouses-list__table-header--actions">ACTIONS</h3>
+                <h2 div className="warehouses-list__table-header--actions">ACTIONS</h2>
             </div>
             {
                 warehouseArr.map((warehouse) => (

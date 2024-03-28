@@ -10,25 +10,66 @@
     box-shadow: 0 0 .1875rem #BDC5D5;
     padding-top: .9375rem;
     
+    @include tablet{
+        margin: 1.875rem;
+    }
+
+    @include desktop{
+        margin: 7.5rem;
+    }
 
     &-header {
     
     padding: 1.25rem;
 
+    @include tablet{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 1.875rem;
+    }
+
+    @include desktop{
+        padding: 1.875rem 2rem;
+    }
+
         &__title {
             padding-bottom: 1rem;
+
+            @include tablet{
+                padding: 0;
+            }
         }
 
         &__search-bar {
-            width: 100%;
+
+            @include tablet{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 53vw;
+            }
+
+            @include desktop{
+                width: 39vw;
+                justify-content: space-between;
+            }
             &__container{
                 display:flex;
                 flex-direction: row;
                 border: 1px solid #BDC5D5;
                 border-radius: 1.25rem;
+
+                @include desktop{
+                    width: 23vw;
+                }
             }
             &--input{
                 border:none;
+
+                @include desktop {
+                    width: 100%;
+                }
             }
             &--icon{
                 padding-right: .625rem;
@@ -38,6 +79,10 @@
 
         &__add-container{
             padding-top: 1rem;
+
+            @include tablet{
+                padding: 0 1.25rem;
+            }
 
             &__btn{
                 background-color: #2E66E5;
@@ -51,6 +96,61 @@
 
         &__table-header{
             display:none;
+            background-color: #F7F8F9;
+            padding: 0 1.5rem;
+            height: 5vw;
+        
+
+            @include tablet{
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            @include desktop{
+                padding: 0 2rem;
+            }
+
+            &--warehouse{
+                @include tablet{
+                    display:flex;
+                    align-items: center;
+                    padding-right: 9vw;
+                }
+            }
+            &--address{
+                @include tablet{
+                    display:flex;
+                    align-items: center;
+                    padding-right: 8vw;
+                }
+
+                @include desktop{
+                    padding-right: 11.8vw;
+                }
+            }
+            &--contact-name{
+                @include tablet{
+                    display:flex;
+                    align-items: center;
+                    padding-right: 2vw;
+                }
+
+                @include desktop{
+                    padding-right: 9vw;
+                }
+            }
+            &--contact-info{
+                @include tablet{
+                    display:flex;
+                    align-items: center;
+                    padding-right: 4vw;
+                }
+
+                @include desktop{
+                    padding-right: 8.5vw;
+                }
+            }
         }
 
         &__container{
@@ -60,17 +160,44 @@
         &__card{
             padding: 1rem;
 
+            @include tablet {
+                display:flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 1.5rem;
+            }
+
+            @include desktop{
+                padding: 1rem 2rem;
+            }
+
             &-info{
             display:flex;
             flex-direction: row;
             justify-content: space-between;
             width: 75vw;
             padding-bottom: 10px;
+
+            @include tablet{
+                align-items: center;
+            }
             
 
                 &-wa{
                     display:flex;
                     flex-direction: column;
+
+                    @include tablet{
+                        flex-direction:row;
+                        width: 40vw;
+                        justify-content: space-between;
+                        align-items:center;
+                    }
+
+                    @include desktop{
+                        width: 34vw;
+                    }
 
                     &--warehouse{
                         padding-bottom: .625rem;
@@ -89,6 +216,15 @@
 
                     &--address{
                         width: 30vw;
+                        @include tablet{
+                            width: 18vw;
+                        }
+
+                        &-txt{
+                            @include tablet{
+                                width: 12.978vw;
+                            }
+                        }
                     }
                 }
 
@@ -96,8 +232,26 @@
                     display:flex;
                     flex-direction: column;
 
+                    @include tablet{
+                        flex-direction:row;
+                        width: 37vw;
+                        justify-content: space-between;
+                        align-items:center;
+                    }
+
                     &--contact-name{
                         padding-bottom: 1.0625rem;
+
+                        @include tablet{
+                            padding: 0;
+                            width: 15vw;
+                        }
+                    }
+
+                    &--contact-info{
+                        @include tablet{
+                            width: 20vw;
+                        }
                     }
                 }
             }
@@ -105,6 +259,17 @@
             &-info-de{
                 display:flex;
                 justify-content: space-between;
+
+                @include tablet{
+                    width: 10vw;
+                    justify-content: center;
+                }
+
+                &-delete{
+                    @include tablet{
+                        padding-right: .625rem;
+                    }
+                }
             }
         }
 
@@ -118,10 +283,24 @@ a {
 
 p {
     font-size: .75rem;
+
+    @include tablet{
+        font-size: .875rem;
+    }
 }
 
 h3 {
     font-size: .625rem;
+    line-height: 1.125rem;
+    color: #5C667E;
+
+    @include tablet {
+        display:none;
+    }
+}
+
+h2 {
+    font-size: .75rem;
     line-height: 1.125rem;
     color: #5C667E;
 }

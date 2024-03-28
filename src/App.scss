@@ -29,6 +29,7 @@ button, input, .button {
     max-height: 2.25rem;
     border-radius: 1.25rem;
     padding: 0 1rem;
+    background-color: $primary3;
     @include mobile {
         width: 100%;
     }

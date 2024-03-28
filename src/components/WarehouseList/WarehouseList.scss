@@ -266,6 +266,7 @@
                 }
 
                 &-delete{
+                    cursor: pointer;
                     @include tablet{
                         padding-right: .625rem;
                     }

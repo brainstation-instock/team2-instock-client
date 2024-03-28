@@ -98,7 +98,7 @@ function WarehouseList() {
                                 <div className="warehouses-list__card-info-wa">
                                     <div className="warehouses-list__card-info-wa--warehouse">
                                         <h3 className="warehouses-list__card-info-wa--warehouse-label">WAREHOUSE</h3>
-                                        <Link key={warehouse.id} to={`/warehouses/${warehouse.id}`} className="warehouses-list__card-info-wa--warehouse-nc">
+                                        <Link key={warehouse.id} to={`/warehouses/${warehouse.id}/inventories`} className="warehouses-list__card-info-wa--warehouse-nc">
                                             <p className="warehouses-list__card-info-wa--warehouse-nc-name">{warehouse.warehouse_name}</p>
                                             <img className="warehouses-list__card-info-wa--warehouse-nc-chevron" alt="chevron-right" src={chvrnRight}/>
                                         </Link>

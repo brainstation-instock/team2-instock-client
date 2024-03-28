@@ -24,7 +24,7 @@ function App() {
         <Route path='/inventories/:idOfItem/edit' element={<EditInventoryItem />} />
         <Route path='/warehouses/:idOfWarehouse/edit' element={<EditWarehouse />} />
         <Route path='/inventories/:idOfItem' element={<InventoryItem />} />
-        <Route path='/warehouses/:idOfWarehouse' element={<WarehouseInventory />} />
+        <Route path='/warehouses/:id/inventory' element={<WarehouseInventory />} />
         <Route path='/notfound' element={<NotFound />} />
         <Route path='*' element={<Navigate to='/notfound' />} />
       </Routes>

@@ -20,8 +20,7 @@ function WarehouseDetails({id}){
     if(!warehouse){
         return <h1>Loading...</h1>
     }
-
-    console.log(warehouse);
+    
     return(
         <>
             <section className='warehouse'>

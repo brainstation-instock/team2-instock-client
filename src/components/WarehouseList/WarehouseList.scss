@@ -1,0 +1,127 @@
+@use "../../styles/partials/variables" as *;
+
+@use "../../styles/partials/mixins" as *;
+
+@use "../../styles/partials/typography";
+
+.warehouses {
+    
+    margin: 1.25rem;
+    box-shadow: 0 0 .1875rem #BDC5D5;
+    padding-top: .9375rem;
+    
+
+    &-header {
+    
+    padding: 1.25rem;
+
+        &__title {
+            padding-bottom: 1rem;
+        }
+
+        &__search-bar {
+            width: 100%;
+            &__container{
+                display:flex;
+                flex-direction: row;
+                border: 1px solid #BDC5D5;
+                border-radius: 1.25rem;
+            }
+            &--input{
+                border:none;
+            }
+            &--icon{
+                padding-right: .625rem;
+            }
+
+        }
+
+        &__add-container{
+            padding-top: 1rem;
+
+            &__btn{
+                background-color: #2E66E5;
+                color: #FFFFFF;
+                border:none;
+            }
+        }
+    }
+
+    &-list {
+
+        &__table-header{
+            display:none;
+        }
+
+        &__container{
+            border-top: 1px #BDC5D5 solid ;
+        }
+
+        &__card{
+            padding: 1rem;
+
+            &-info{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 75vw;
+            padding-bottom: 10px;
+            
+
+                &-wa{
+                    display:flex;
+                    flex-direction: column;
+
+                    &--warehouse{
+                        padding-bottom: .625rem;
+                    
+                        &-nc{
+                        display:flex;
+                        flex-direction: row;
+                        align-items:center;
+
+                            &-name{
+                                color: #2E66E5;
+                                font-weight: 550;
+                            }
+                        }
+                    }
+
+                    &--address{
+                        width: 30vw;
+                    }
+                }
+
+                &-cc{
+                    display:flex;
+                    flex-direction: column;
+
+                    &--contact-name{
+                        padding-bottom: 1.0625rem;
+                    }
+                }
+            }
+
+            &-info-de{
+                display:flex;
+                justify-content: space-between;
+            }
+        }
+
+
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: .75rem;
+}
+
+h3 {
+    font-size: .625rem;
+    line-height: 1.125rem;
+    color: #5C667E;
+}

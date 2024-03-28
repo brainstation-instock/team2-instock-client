@@ -6,6 +6,8 @@ import deleteIcon from '../../assets/icons/delete_outline-24px.svg'
 import editIcon from '../../assets/icons/edit-24px.svg'
 import chvrnRight from '../../assets/icons/chevron_right-24px.svg'
 import './WarehouseList.scss'
+import {NavLink, Link} from 'react-router-dom'
+import sortIcon from '../../assets/icons/sort-24px.svg'
 
 function WarehouseList() {
 
@@ -19,76 +21,111 @@ function WarehouseList() {
             setWarehouses(response.data)
         })
     }, [])
+
+    const warehouseArr = warehouses.warehouses
+
+    if(!warehouseArr){
+        return(
+            <p>Loading..</p>
+        )
+    }
+
     return (
-    <>
-        <header>
-            <h1>Warehouses</h1>
-            <div>
+    <main className="warehouses">
+        <header className="warehouses-header">
+            <h1 className="warehouses-header__title">Warehouses</h1>
+            <div className="warehouses-header__search-bar">
                 
                 <form>   
                     <label>
-                        <div>
-                            <img alt="search-icon" src={searchIcon}/>
+                        <div className="warehouses-header__search-bar__container">
                             <input 
+                            className="warehouses-header__search-bar--input"
                             type="text" 
                             placeholder="Search..." 
                             name="search"/>
+                            <img className="warehouses-header__search-bar--icon" alt="search-icon" src={searchIcon}/>
                         </div>
                     </label>
                 </form>
                 <NavLink to={'/warehouses/add'}>
-                    <div>
-                        <button>
+                    <div className="warehouses-header__add-container">
+                        <button className="warehouses-header__add-container__btn">
                             + Add New Warehouse
                         </button>
                     </div>
                 </NavLink>
             </div>
         </header>
-        <main>
+        <section className="warehouses-list">
+            <div className="warehouses-list__table-header">
+                <div div className="warehouses-list__table-header--warehouse">
+                    <h3>WAREHOUSE</h3>
+                    <img alt='sort-icon' src={sortIcon}/>
+                </div>
+                <div div className="warehouses-list__table-header--address">
+                    <h3>ADDRESS</h3>
+                    <img alt='sort-icon' src={sortIcon}/>
+                </div>
+                <div div className="warehouses-list__table-header--contact-name">
+                    <h3>CONTACT NAME</h3>
+                    <img alt='sort-icon' src={sortIcon}/>
+                </div>
+                <div div className="warehouses-list__table-header--contact-info">
+                    <h3>CONTACT INFORMATION</h3>
+                    <img alt='sort-icon' src={sortIcon}/>
+                </div>
+                <h3 div className="warehouses-list__table-header--actions">ACTIONS</h3>
+            </div>
             {
-                warehouses.map((warehouse) =>{
-                    return(
-                        <article>
-                            <div>
-                                <div>
-                                    <div>
-                                        <h3>Warehouse</h3>
-                                        <Link key={warehouse.id} to={`/warehouses/${warehouse.id}`}>
-                                        <p>{warehouse.warehouse_name}</p>
-                                        <img alt="chevron-right" src={chvrnRight}/>
+                warehouseArr.map((warehouse) => (
+                        <article key={warehouse.id} className="warehouses-list__container">
+                            <div className="warehouses-list__card">
+                                <div className="warehouses-list__card-info">
+                                <div className="warehouses-list__card-info-wa">
+                                    <div className="warehouses-list__card-info-wa--warehouse">
+                                        <h3 className="warehouses-list__card-info-wa--warehouse-label">WAREHOUSE</h3>
+                                        <Link key={warehouse.id} to={`/warehouses/${warehouse.id}`} className="warehouses-list__card-info-wa--warehouse-nc">
+                                            <p className="warehouses-list__card-info-wa--warehouse-nc-name">{warehouse.warehouse_name}</p>
+                                            <img className="warehouses-list__card-info-wa--warehouse-nc-chevron" alt="chevron-right" src={chvrnRight}/>
                                         </Link>
                                     </div>
-                                    <div>
-                                        <h3>Address</h3>
-                                        <p>{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
+                                    <div className="warehouses-list__card-info-wa--address">
+                                        <h3 className="warehouses-list__card-info-wa--address-label">ADDRESS</h3>
+                                        <p className="warehouses-list__card-info-wa--address-txt">{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
                                     </div>
                                 </div>
-                                <div>
-                                    <div>
-                                        <h3>Contact Name</h3>
-                                        <p>{warehouse.contact_name}</p>
+                                <div className="warehouses-list__card-info-cc">
+                                    <div className="warehouses-list__card-info-cc--contact-name">
+                                        <h3 className="warehouses-list__card-info-cc--contact-name-label">CONTACT NAME</h3>
+                                        <p className="warehouses-list__card-info-cc--contact-name-txt">{warehouse.contact_name}</p>
                                     </div>
-                                    <div>
-                                        <h3>Contact Information</h3>
-                                        <div>
-                                        <p>{warehouse.contact_phone}</p>
-                                        <p>{warehouse.contact_email}</p>
+                                    <div className="warehouses-list__card-info-cc--contact-info">
+                                        <h3 className="warehouses-list__card-info-cc--contact-info-label">CONTACT INFORMATION</h3>
+                                        <div className="warehouses-list__card-info-cc--contact-info-ph">
+                                        <p className="warehouses-list__card-info-cc--contact-info-ph--phone">{warehouse.contact_phone}</p>
+                                        <p className="warehouses-list__card-info-cc--contact-info-ph--email">{warehouse.contact_email}</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <img alt="delete-icon" src={deleteIcon}/>
-                                    <img alt="edit-icon" src={editIcon}/>
-                                </div>
-                
                             </div>
+                                <div className="warehouses-list__card-info-de">
+                                    <Link to={`/warehouses/${warehouse.id}/delete`}>
+                                    <img className="warehouses-list__card-info-de-delete" alt="delete-icon" src={deleteIcon}/>
+                                    </Link>
+                                    <Link to={`/warehouses/${warehouse.id}/edit`}>
+                                    <img className="warehouses-list__card-info-de-edit" alt="edit-icon" src={editIcon}/>
+                                    </Link>
+                                </div>
+                            </div>
+                
+                            
                         </article>
-                    )
-                })
-            }
-        </main>
-    </>
+                ))
+                    }
+            
+        </section>
+    </main> 
     )
  
 }

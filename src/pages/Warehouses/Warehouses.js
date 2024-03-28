@@ -1,4 +1,5 @@
 import './Warehouses.scss';
+import WarehouseList from '../../components/WarehouseList/WarehouseList';
 
 function Warehouses() {
 

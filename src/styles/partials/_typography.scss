@@ -31,7 +31,7 @@
     }
 
     // M P2 - Body Medium
-    h6 {
+    h6, .p2 {
         @include typography-style (0.8125rem, 1.25rem, 400);
     }
 

@@ -1,17 +1,15 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import searchIcon from '../../assets/icons/search-24px.svg'
 import deleteIcon from '../../assets/icons/delete_outline-24px.svg'
 import editIcon from '../../assets/icons/edit-24px.svg'
 import chvrnRight from '../../assets/icons/chevron_right-24px.svg'
-import './WarehouseList.scss'
+import './InventoryList.scss'
 import {NavLink, Link} from 'react-router-dom'
 import sortIcon from '../../assets/icons/sort-24px.svg'
 
-function WarehouseList() {
+function InventoryList() {
 
-    const { idOfItem } = useParams();
     const [items, setItems] = useState([]);
     
     useEffect(() => {
@@ -24,97 +22,108 @@ function WarehouseList() {
 
     const itemsArr = items.inventories
 
-    if(!warehouseArr){
+    console.log(itemsArr)
+
+    if(!itemsArr){
         return(
             <p>Loading..</p>
         )
     }
 
     return (
-    <main className="warehouses">
-        <header className="warehouses-header">
-            <h1 className="warehouses-header__title">Warehouses</h1>
-            <div className="warehouses-header__search-bar">
+    <main className="items">
+        <header className="items-header">
+            <h1 className="items-header__title">Inventory</h1>
+            <div className="items-header__search-bar">
                 
                 <form>   
                     <label>
-                        <div className="warehouses-header__search-bar__container">
+                        <div className="items-header__search-bar__container">
                             <input 
-                            className="warehouses-header__search-bar--input"
+                            className="items-header__search-bar--input"
                             type="text" 
                             placeholder="Search..." 
                             name="search"/>
-                            <img className="warehouses-header__search-bar--icon" alt="search-icon" src={searchIcon}/>
+                            <img className="items-header__search-bar--icon" alt="search-icon" src={searchIcon}/>
                         </div>
                     </label>
                 </form>
-                <NavLink to={'/warehouses/add'}>
-                    <div className="warehouses-header__add-container">
-                        <button className="warehouses-header__add-container__btn">
-                            + Add New Warehouse
+                <NavLink to={'/inventories/add'}>
+                    <div className="items-header__add-container">
+                        <button className="items-header__add-container__btn">
+                            + Add New item
                         </button>
                     </div>
                 </NavLink>
             </div>
         </header>
-        <section className="warehouses-list">
-            <div className="warehouses-list__table-header">
-                <div div className="warehouses-list__table-header--warehouse">
+        <section className="items-list">
+            <div className="items-list__table-header">
+                <div className="items-list__table-header--item">
+                    <h2 className="items-list__table-header--item-txt">INVENTORY ITEM</h2>
+                    <img alt='sort-icon' src={sortIcon}/>
+                </div>
+                <div div className="items-list__table-header--category">
+                    <h2>CATEGORY</h2>
+                    <img alt='sort-icon' src={sortIcon}/>
+                </div>
+                <div div className="items-list__table-header--status">
+                    <h2>STATUS</h2>
+                    <img alt='sort-icon' src={sortIcon}/>
+                </div>
+                <div div className="items-list__table-header--qty">
+                    <h2>QTY</h2>
+                    <img alt='sort-icon' src={sortIcon}/>
+                </div>
+                <div div className="items-list__table-header--warehouse">
                     <h2>WAREHOUSE</h2>
                     <img alt='sort-icon' src={sortIcon}/>
                 </div>
-                <div div className="warehouses-list__table-header--address">
-                    <h2>ADDRESS</h2>
-                    <img alt='sort-icon' src={sortIcon}/>
-                </div>
-                <div div className="warehouses-list__table-header--contact-name">
-                    <h2>CONTACT NAME</h2>
-                    <img alt='sort-icon' src={sortIcon}/>
-                </div>
-                <div div className="warehouses-list__table-header--contact-info">
-                    <h2>CONTACT INFORMATION</h2>
-                    <img alt='sort-icon' src={sortIcon}/>
-                </div>
-                <h2 div className="warehouses-list__table-header--actions">ACTIONS</h2>
+                <h2 div className="items-list__table-header--actions">ACTIONS</h2>
             </div>
             {
-                warehouseArr.map((warehouse) => (
-                        <article key={warehouse.id} className="warehouses-list__container">
-                            <div className="warehouses-list__card">
-                                <div className="warehouses-list__card-info">
-                                <div className="warehouses-list__card-info-wa">
-                                    <div className="warehouses-list__card-info-wa--warehouse">
-                                        <h3 className="warehouses-list__card-info-wa--warehouse-label">WAREHOUSE</h3>
-                                        <Link key={warehouse.id} to={`/warehouses/${warehouse.id}`} className="warehouses-list__card-info-wa--warehouse-nc">
-                                            <p className="warehouses-list__card-info-wa--warehouse-nc-name">{warehouse.warehouse_name}</p>
-                                            <img className="warehouses-list__card-info-wa--warehouse-nc-chevron" alt="chevron-right" src={chvrnRight}/>
+                itemsArr.map((item) => (
+                        <article key={item.id} className="items-list__container">
+                            <div className="items-list__card">
+                                <div className="items-list__card-info">
+                                <div className="items-list__card-info-ic">
+                                    <div className="items-list__card-info-ic--item">
+                                        <h3 className="items-list__card-info-ic--item-label">INVENTORY ITEM</h3>
+                                        <Link key={item.id} to={`/inventories/${item.id}`} className="items-list__card-info-ic--item-ic">
+                                            <p className="items-list__card-info-ic--item-ic-name">{item.item_name}</p>
+                                            <img className="items-list__card-info-ic--item-ic-chevron" alt="chevron-right" src={chvrnRight}/>
                                         </Link>
                                     </div>
-                                    <div className="warehouses-list__card-info-wa--address">
-                                        <h3 className="warehouses-list__card-info-wa--address-label">ADDRESS</h3>
-                                        <p className="warehouses-list__card-info-wa--address-txt">{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
+                                    <div className="items-list__card-info-ic--category">
+                                        <h3 className="items-list__card-info-ic--category-label">CATEGORY</h3>
+                                        <p className= 'items-list__card-info-ic--category-txt'>{item.category}</p>
                                     </div>
                                 </div>
-                                <div className="warehouses-list__card-info-cc">
-                                    <div className="warehouses-list__card-info-cc--contact-name">
-                                        <h3 className="warehouses-list__card-info-cc--contact-name-label">CONTACT NAME</h3>
-                                        <p className="warehouses-list__card-info-cc--contact-name-txt">{warehouse.contact_name}</p>
-                                    </div>
-                                    <div className="warehouses-list__card-info-cc--contact-info">
-                                        <h3 className="warehouses-list__card-info-cc--contact-info-label">CONTACT INFORMATION</h3>
-                                        <div className="warehouses-list__card-info-cc--contact-info-ph">
-                                        <p className="warehouses-list__card-info-cc--contact-info-ph--phone">{warehouse.contact_phone}</p>
-                                        <p className="warehouses-list__card-info-cc--contact-info-ph--email">{warehouse.contact_email}</p>
+                                <div className="items-list__card-info-sq">
+                                    <div className="items-list__card-info-sq--status">
+                                        <h3 className={`items-list__card-info-sq--status-label`}>STATUS</h3>
+                                        <div className={`items-list__card-info-sq--status-container--${item.status === "In Stock" ? 'in-stock' : 'out-of-stock'}`}>
+                                        <p className={`items-list__card-info-sq--status-txt--${item.status === "In Stock" ? 'in-stock' : 'out-of-stock'}`}>{item.status}</p>
                                         </div>
+                                    </div>
+                                    <div className="items-list__card-info-sq--quantity">
+                                        <h3 className="items-list__card-info-sq--quantity-label">QTY</h3>
+                                        <div className="items-list__card-info-sq--quantity">
+                                        <p className="items-list__card-info-sq--quantity-txt">{item.quantity}</p>
+                                        </div>
+                                    </div>
+                                    <div className="items-list__card-info-sq--warehouse">
+                                        <h3 className="items-list__card-info-sq--warehouse-label">WAREHOUSE</h3>
+                                        <p className="items-list__card-info-sq--warehouse-label-txt">{item.warehouse_name}</p>
                                     </div>
                                 </div>
                             </div>
-                                <div className="warehouses-list__card-info-de">
-                                    <Link to={`/warehouses/${warehouse.id}/delete`}>
-                                    <img className="warehouses-list__card-info-de-delete" alt="delete-icon" src={deleteIcon}/>
+                                <div className="items-list__card-info-de">
+                                    <Link to={`/items/${item.id}/delete`}>
+                                    <img className="items-list__card-info-de-delete" alt="delete-icon" src={deleteIcon}/>
                                     </Link>
-                                    <Link to={`/warehouses/${warehouse.id}/edit`}>
-                                    <img className="warehouses-list__card-info-de-edit" alt="edit-icon" src={editIcon}/>
+                                    <Link to={`/items/${item.id}/edit`}>
+                                    <img className="items-list__card-info-de-edit" alt="edit-icon" src={editIcon}/>
                                     </Link>
                                 </div>
                             </div>
@@ -130,4 +139,4 @@ function WarehouseList() {
  
 }
 
-export default WarehouseList 
+export default InventoryList 

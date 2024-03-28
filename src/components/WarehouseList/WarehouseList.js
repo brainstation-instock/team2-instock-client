@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import searchIcon from '../../assets/icons/search-24px.svg'
 import deleteIcon from '../../assets/icons/delete_outline-24px.svg'
@@ -11,7 +10,6 @@ import sortIcon from '../../assets/icons/sort-24px.svg'
 
 function WarehouseList() {
 
-    const { idOfWarehouse } = useParams();
     const [warehouses, setWarehouses] = useState([]);
     
     useEffect(() => {

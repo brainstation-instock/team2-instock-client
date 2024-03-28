@@ -4,7 +4,7 @@
 
 @use "../../styles/partials/typography";
 
-.warehouses {
+.items {
     
     margin: 1.25rem;
     box-shadow: 0 0 .1875rem #BDC5D5;
@@ -48,6 +48,7 @@
                 flex-direction: row;
                 align-items: center;
                 width: 53vw;
+                justify-content: flex-end;
             }
 
             @include desktop{
@@ -111,44 +112,63 @@
                 padding: 0 2rem;
             }
 
+            &--item{
+                @include tablet{
+                    display:flex;
+                    align-items: center;
+                    padding-right: 3.5vw;
+                }
+
+                @include desktop{
+                    padding-right: 8vw;
+                }
+
+                &-txt{
+                    width: 7.3vw;
+                }
+            }
+            &--category{
+                @include tablet{
+                    display:flex;
+                    align-items: center;
+                    padding-right: 5vw;
+                }
+
+                @include desktop{
+                    padding-right: 7vw;
+                }
+            }
+            &--status{
+                @include tablet{
+                    display:flex;
+                    align-items: center;
+                    padding-right: 7.8vw;
+                }
+
+                @include desktop{
+                    padding-right: 6.6vw;
+                }
+            }
+            &--qty{
+                @include tablet{
+                    display:flex;
+                    align-items: center;
+                    padding-right: 3.9vw;
+                }
+
+                @include desktop{
+                    padding-right: 4.5vw;
+                }
+            }
             &--warehouse{
                 @include tablet{
                     display:flex;
                     align-items: center;
-                    padding-right: 9vw;
-                }
-            }
-            &--address{
-                @include tablet{
-                    display:flex;
-                    align-items: center;
-                    padding-right: 8vw;
+                    padding-right: 6vw;
                 }
 
                 @include desktop{
-                    padding-right: 11.8vw;
-                }
-            }
-            &--contact-name{
-                @include tablet{
-                    display:flex;
-                    align-items: center;
-                    padding-right: 2vw;
-                }
-
-                @include desktop{
-                    padding-right: 9vw;
-                }
-            }
-            &--contact-info{
-                @include tablet{
-                    display:flex;
-                    align-items: center;
-                    padding-right: 4vw;
-                }
-
-                @include desktop{
-                    padding-right: 8.5vw;
+                    padding-right: 12.5vw;
                 }
             }
         }
@@ -176,33 +196,43 @@
             display:flex;
             flex-direction: row;
             justify-content: space-between;
-            width: 75vw;
-            padding-bottom: 10px;
+            width: 65vw;
+            padding-bottom: .625rem;
 
             @include tablet{
                 align-items: center;
+                padding: 0;
+                width: 70vw;
+            }
+
+            @include desktop{
+                width: 60vw;
             }
             
 
-                &-wa{
+                &-ic{
                     display:flex;
                     flex-direction: column;
 
                     @include tablet{
                         flex-direction:row;
-                        width: 40vw;
+                        width: 35vw;
                         justify-content: space-between;
                         align-items:center;
                     }
 
                     @include desktop{
-                        width: 34vw;
+                        width: 30vw;
                     }
 
-                    &--warehouse{
+                    &--item{
                         padding-bottom: .625rem;
+
+                        @include tablet{
+                            padding: 0;
+                        }
                     
-                        &-nc{
+                        &-ic{
                         display:flex;
                         flex-direction: row;
                         align-items:center;
@@ -214,10 +244,14 @@
                         }
                     }
 
-                    &--address{
+                    &--category{
                         width: 30vw;
                         @include tablet{
-                            width: 18vw;
+                            width: 15vw;
+                        }
+
+                        @include desktop{
+                            width: 13vw;
                         }
 
                         &-txt{
@@ -228,29 +262,79 @@
                     }
                 }
 
-                &-cc{
+                &-sq{
                     display:flex;
                     flex-direction: column;
+                    width: 24vw;
 
                     @include tablet{
                         flex-direction:row;
-                        width: 37vw;
+                        width: 38vw;
                         justify-content: space-between;
                         align-items:center;
                     }
 
-                    &--contact-name{
+                    @include desktop{
+                        width: 30vw;
+                    }
+
+                    &--status{
                         padding-bottom: 1.0625rem;
 
                         @include tablet{
                             padding: 0;
-                            width: 15vw;
+                            width: 12vw;
+                        }
+
+                        @include desktop{
+                            width: 7vw;
+                        }
+
+                        &-container--in-stock{
+                            background-color: rgba(21, 132, 99, .07);
+                            align-content: center;
+                            border-radius: 1.25rem;
+                            padding: 2px 4px;
+                        }
+
+                        &-container--out-of-stock{
+                            background-color: rgba(201,69,21, .07);
+                            align-content: center;
+                            border-radius: 1.25rem;
+                            padding: 2px 4px;
+                        }
+
+                        &-txt--in-stock{
+                            color: rgb(21,132,99);
+                            font-weight:550;
+                            text-align: center;
+                        }
+
+                        &-txt--out-of-stock{
+                            color: rgb(201,69,21);
+                            font-weight:550;
+                            text-align: center;
                         }
                     }
 
-                    &--contact-info{
+                    &--quantity{
+                        
                         @include tablet{
-                            width: 20vw;
+                            width: 5vw;
+                        }
+
+                        @include desktop{
+                            width: 3vw;
+                        }
+                    }
+
+
+                    &--warehouse{
+                        padding-top: .625rem;
+
+                        @include tablet{
+                            padding: 0;
+                            width: 10vw;
                         }
                     }
                 }

@@ -15,21 +15,21 @@ function App() {
   return (
     <>
         <BrowserRouter>
-        <Routes>
-            <Route path='/' element={<Warehouses />} />
-            <Route path='/warehouses' element={<Navigate to='/' />} />
-            <Route path='/inventories' element={<Inventories />} />
-            <Route path='/inventories/add' element={<AddInventoryItem />} />
-            <Route path='/warehouses/add' element={<AddWarehouse />} />
-            <Route path='/inventories/:id/edit' element={<EditInventoryItem />} />
-            <Route path='/warehouses/:id/edit' element={<EditWarehouse />} />
-            <Route path='/inventories/:id' element={<InventoryItem />} />
-            <Route path='/warehouses/:id/inventory' element={<WarehouseInventory />} />
-            <Route path='/notfound' element={<NotFound />} />
-            <Route path='*' element={<Navigate to='/notfound' />} />
-        </Routes>
+            <Routes>
+                <Route path='/' element={<Warehouses />} />
+                <Route path='/warehouses' element={<Navigate to='/' />} />
+                <Route path='/inventories' element={<Inventories />} />
+                <Route path='/inventories/add' element={<AddInventoryItem />} />
+                <Route path='/warehouses/add' element={<AddWarehouse />} />
+                <Route path='/inventories/:id/edit' element={<EditInventoryItem />} />
+                <Route path='/warehouses/:id/edit' element={<EditWarehouse />} />
+                <Route path='/inventories/:id' element={<InventoryItem />} />
+                <Route path='/warehouses/:id/inventory' element={<WarehouseInventory />} />
+                <Route path='/notfound' element={<NotFound />} />
+                <Route path='*' element={<Navigate to='/notfound' />} />
+            </Routes>
+            <Footer />
         </BrowserRouter>
-        <Footer />
     </>
   );
 }

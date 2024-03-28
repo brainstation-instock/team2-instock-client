@@ -1,9 +1,11 @@
 import './EditWarehouse.scss';
+import Header from '../Header/Header';
 
 function EditWarehouse() {
     return (
         <>
-        <h1>Edit Warehouse Component</h1>
+            <Header isWarehouse={true}/>
+            <h1>Edit Warehouse Component</h1>
         </>
     )
 }

@@ -9,6 +9,9 @@ import sortIcon from '../../assets/icons/sort-24px.svg'
 import './WarehouseList.scss'
 import DeleteWarehouse from '../DeleteWarehouse/DeleteWarehouse'
 
+const baseUrl = process.env.REACT_APP_BASE_URL;
+const warehousesUrl = `${baseUrl}/api/warehouses`;
+
 function WarehouseList() {
 
     // Declare variables
@@ -17,7 +20,7 @@ function WarehouseList() {
 
     useEffect(() => {
         axios
-        .get('http://localhost:8080/api/warehouses')
+        .get(warehousesUrl)
         .then((response) => {
             setWarehouses(response.data)
         })
@@ -42,6 +45,15 @@ function WarehouseList() {
         setModal(null);
         document.body.style.overflow = 'auto';
     };
+    // Refresh Warehouses after Delete button is selected
+    const refreshWarehouses = () => {
+        axios.get(warehousesUrl).then((response) => {
+            setWarehouses(response.data);
+        })
+        .catch((error) => {
+            console.error(error);
+        })
+    }
 
     return (
     <main className="warehouses">
@@ -130,7 +142,7 @@ function WarehouseList() {
                                 </div>
                             </div>
                             {modal === warehouse.id && 
-                            <DeleteWarehouse toggleModal={closeModal} warehouse={warehouse.warehouse_name} />}
+                            <DeleteWarehouse toggleModal={closeModal} warehouse={warehouse} refreshWarehouses={refreshWarehouses} />}
                         </article>
                 ))
                     }

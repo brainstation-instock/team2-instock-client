@@ -1,19 +1,20 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useState, useEffect } from 'react' // imported React for toggleModal functionality
+import { NavLink, Link } from 'react-router-dom' // consolidated all react-router-dom calls
 import axios from 'axios'
 import searchIcon from '../../assets/icons/search-24px.svg'
 import deleteIcon from '../../assets/icons/delete_outline-24px.svg'
 import editIcon from '../../assets/icons/edit-24px.svg'
 import chvrnRight from '../../assets/icons/chevron_right-24px.svg'
-import './WarehouseList.scss'
-import {NavLink, Link} from 'react-router-dom'
 import sortIcon from '../../assets/icons/sort-24px.svg'
+import './WarehouseList.scss'
+import DeleteWarehouse from '../DeleteWarehouse/DeleteWarehouse'
 
 function WarehouseList() {
 
-    const { idOfWarehouse } = useParams();
+    // Declare variables
     const [warehouses, setWarehouses] = useState([]);
-    
+    const [modal, setModal] = useState(null);
+
     useEffect(() => {
         axios
         .get('http://localhost:8080/api/warehouses')
@@ -29,6 +30,18 @@ function WarehouseList() {
             <p>Loading..</p>
         )
     }
+
+    // Toggle visibility with toggleModal
+    const toggleModal = (warehouseId) => {
+        setModal(warehouseId);
+        // Disable scrolling when the modal is opened
+        document.body.style.overflow = 'hidden';
+    };
+    // Allow scrolling when the modal is closed
+    const closeModal = () => {
+        setModal(null);
+        document.body.style.overflow = 'auto';
+    };
 
     return (
     <main className="warehouses">
@@ -110,20 +123,17 @@ function WarehouseList() {
                                 </div>
                             </div>
                                 <div className="warehouses-list__card-info-de">
-                                    <Link to={`/warehouses/${warehouse.id}/delete`}>
-                                    <img className="warehouses-list__card-info-de-delete" alt="delete-icon" src={deleteIcon}/>
-                                    </Link>
+                                    <img className="warehouses-list__card-info-de-delete" alt="delete-icon" src={deleteIcon} onClick={() => toggleModal(warehouse.id)}/>
                                     <Link to={`/warehouses/${warehouse.id}/edit`}>
                                     <img className="warehouses-list__card-info-de-edit" alt="edit-icon" src={editIcon}/>
                                     </Link>
                                 </div>
                             </div>
-                
-                            
+                            {modal === warehouse.id && 
+                            <DeleteWarehouse toggleModal={closeModal} warehouse={warehouse.warehouse_name} />}
                         </article>
                 ))
                     }
-            
         </section>
     </main> 
     )

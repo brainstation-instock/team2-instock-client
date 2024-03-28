@@ -1,9 +1,11 @@
+import Header from '../../components/Header/Header';
 import './Inventories.scss';
 
 function Inventories() {
     return (
         <>
-        <h1>Inventories Page</h1>
+            <Header isWarehouse={false}/>
+            <h1>Inventories Page</h1>
         </>
     )
 }

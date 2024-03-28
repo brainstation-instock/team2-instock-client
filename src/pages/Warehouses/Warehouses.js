@@ -1,9 +1,13 @@
+import Header from '../../components/Header/Header';
 import './Warehouses.scss';
+import WarehouseList from '../../components/WarehouseList/WarehouseList';
 
 function Warehouses() {
+
     return (
         <>
-        <h1>Warehouses Page</h1>
+        <Header  isWarehouse={true}/>
+        <WarehouseList/>
         </>
     )
 }

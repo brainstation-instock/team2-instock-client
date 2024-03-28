@@ -1,0 +1,21 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.footer{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem 0;
+
+    @include tablet{
+        padding-top: 4.375rem;
+    }
+
+    @include desktop{
+        padding: 5.9375rem 0 3rem 0;
+    }
+
+    &__text{
+        color: $secondary1;
+    }
+}

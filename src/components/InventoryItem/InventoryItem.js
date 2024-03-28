@@ -1,9 +1,11 @@
-import './InventoryItem.scss'
+import './InventoryItem.scss';
+import Header from '../Header/Header';
 
 function InventoryItem() {
     return (
         <>
-        <h1>Inventory Item Component</h1>
+            <Header isWarehouse={false}/>
+            <h1>Inventory Item Component</h1>
         </>
     )
 }

@@ -9,25 +9,27 @@ import EditWarehouse from './components/EditWarehouse/EditWarehouse';
 import InventoryItem from './components/InventoryItem/InventoryItem';
 import WarehouseInventory from './components/WarehouseInventory/WarehouseInventory';
 import NotFound from './pages/NotFound/NotFound';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Warehouses />} />
-        <Route path='/warehouses' element={<Navigate to='/' />} />
-        <Route path='/inventories' element={<Inventories />} />
-        <Route path='/inventories/add' element={<AddInventoryItem />} />
-        <Route path='/warehouses/add' element={<AddWarehouse />} />
-        <Route path='/inventories/:id/edit' element={<EditInventoryItem />} />
-        <Route path='/warehouses/:id/edit' element={<EditWarehouse />} />
-        <Route path='/inventories/:id' element={<InventoryItem />} />
-        <Route path='/warehouses/:id/inventory' element={<WarehouseInventory />} />
-        <Route path='/notfound' element={<NotFound />} />
-        <Route path='*' element={<Navigate to='/notfound' />} />
-      </Routes>
-    </BrowserRouter>
+        <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<Warehouses />} />
+            <Route path='/warehouses' element={<Navigate to='/' />} />
+            <Route path='/inventories' element={<Inventories />} />
+            <Route path='/inventories/add' element={<AddInventoryItem />} />
+            <Route path='/warehouses/add' element={<AddWarehouse />} />
+            <Route path='/inventories/:id/edit' element={<EditInventoryItem />} />
+            <Route path='/warehouses/:id/edit' element={<EditWarehouse />} />
+            <Route path='/inventories/:id' element={<InventoryItem />} />
+            <Route path='/warehouses/:id/inventory' element={<WarehouseInventory />} />
+            <Route path='/notfound' element={<NotFound />} />
+            <Route path='*' element={<Navigate to='/notfound' />} />
+        </Routes>
+        </BrowserRouter>
+        <Footer />
     </>
   );
 }

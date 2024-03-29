@@ -36,11 +36,15 @@ function WarehouseInventoryList({id}){
                     {
                         inventories.map((inventory) => {
 
+                            const statusStyle = inventory.status === 'In Stock' ? 'inventory__data--in' : 'inventory__data--out';
+
                             return (
                                 <tr key={inventory.id} className='inventory__row'>
-                                    <td className='inventory__data inventory__data--item'>{inventory.item_name}</td>
+                                    <td className='inventory__data inventory__data--item'>
+                                        <Link to={`/inventories/${inventory.id}`} className='inventory__link'>{inventory.item_name}</Link>
+                                    </td>
                                     <td className='inventory__data inventory__data--category'>{inventory.category}</td>
-                                    <td className='inventory__data inventory__data--status'>{inventory.status}</td>
+                                    <td className={`inventory__data inventory__data--status ${statusStyle}`}>{inventory.status}</td>
                                     <td className='inventory__data inventory__data--quantity'>{inventory.quantity}</td>
                                     <td className='inventory__action'>
                                         <button className='inventory__delete'>delete</button>

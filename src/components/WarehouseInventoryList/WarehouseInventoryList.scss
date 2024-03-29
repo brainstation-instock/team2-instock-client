@@ -3,6 +3,8 @@
 
 .inventory{
 
+    width: 100%;
+
     &__headers{
         display: none;
     }
@@ -32,10 +34,20 @@
         }
 
         &--item{
+            display: flex;
             order: 1;
 
             &::before{
                 content: 'INVENTORY ITEM';
+            }
+
+            &::after{
+                content: '';
+                background-image: url('../../assets/icons/chevron_right-24px.svg');
+                background-size: cover;
+                display: inline-block;
+                min-height: 20px;
+                min-width: 20px;
             }
         }
 
@@ -62,6 +74,11 @@
                 content: 'QTY';
             }
         }
+    }
+
+    &__link{
+        color: $primary2;
+        font-weight: $bold;
     }
 
     &__action{

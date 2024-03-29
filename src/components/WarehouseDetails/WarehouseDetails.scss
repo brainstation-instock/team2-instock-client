@@ -82,7 +82,6 @@
         row-gap: 2.25rem;
 
         @include tablet{
-            column-gap: 5.7%;
             flex-wrap: nowrap;
             width: 100%;
             padding: 1.5rem 2rem;
@@ -105,6 +104,11 @@
 
         @include tablet{
             width: unset;
+            
+            &:nth-of-type(2){
+                padding-left: 2.5rem;
+                width: 30.5%;
+            }
         }
 
         &--full{

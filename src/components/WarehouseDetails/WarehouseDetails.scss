@@ -2,6 +2,7 @@
 @use '../../styles/partials/variables' as *;
 
 .warehouse{
+    border-radius: 3px 3px 0 0;
 
     &__header{
         align-items: center;

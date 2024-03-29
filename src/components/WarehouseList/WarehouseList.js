@@ -1,5 +1,9 @@
+
+import { useState, useEffect } from 'react'
+
 import React, { useState, useEffect } from 'react' // imported React for toggleModal functionality
 import { NavLink, Link } from 'react-router-dom' // consolidated all react-router-dom calls
+
 import axios from 'axios'
 import searchIcon from '../../assets/icons/search-24px.svg'
 import deleteIcon from '../../assets/icons/delete_outline-24px.svg'
@@ -14,7 +18,9 @@ const warehousesUrl = `${baseUrl}/api/warehouses`;
 
 function WarehouseList() {
 
+
     // Declare variables
+
     const [warehouses, setWarehouses] = useState([]);
     const [modal, setModal] = useState(null);
 

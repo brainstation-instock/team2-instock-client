@@ -1,0 +1,390 @@
+@use "../../styles/partials/variables" as *;
+
+@use "../../styles/partials/mixins" as *;
+
+@use "../../styles/partials/typography";
+
+.items {
+    
+    margin: 1.25rem;
+    box-shadow: 0 0 .1875rem #BDC5D5;
+    padding-top: .9375rem;
+    
+    @include tablet{
+        margin: 1.875rem;
+    }
+
+    @include desktop{
+        margin: 7.5rem;
+    }
+
+    &-header {
+    
+    padding: 1.25rem;
+
+    @include tablet{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 1.875rem;
+    }
+
+    @include desktop{
+        padding: 1.875rem 2rem;
+    }
+
+        &__title {
+            padding-bottom: 1rem;
+
+            @include tablet{
+                padding: 0;
+            }
+        }
+
+        &__search-bar {
+
+            @include tablet{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 53vw;
+                justify-content: flex-end;
+            }
+
+            @include desktop{
+                width: 39vw;
+                justify-content: space-between;
+            }
+            &__container{
+                display:flex;
+                flex-direction: row;
+                border: 1px solid #BDC5D5;
+                border-radius: 1.25rem;
+
+                @include desktop{
+                    width: 23vw;
+                }
+            }
+            &--input{
+                border:none;
+
+                @include desktop {
+                    width: 100%;
+                }
+            }
+            &--icon{
+                padding-right: .625rem;
+            }
+
+        }
+
+        &__add-container{
+            padding-top: 1rem;
+
+            @include tablet{
+                padding: 0 1.25rem;
+            }
+
+            &__btn{
+                background-color: #2E66E5;
+                color: #FFFFFF;
+                border:none;
+            }
+        }
+    }
+
+    &-list {
+
+        &__table-header{
+            display:none;
+            background-color: #F7F8F9;
+            padding: 0 1.5rem;
+            height: 5vw;
+        
+
+            @include tablet{
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            @include desktop{
+                padding: 0 2rem;
+            }
+
+            &--item{
+                @include tablet{
+                    display:flex;
+                    align-items: center;
+                    padding-right: 3.5vw;
+                }
+
+                @include desktop{
+                    padding-right: 8vw;
+                }
+
+                &-txt{
+                    width: 7.3vw;
+                }
+            }
+            &--category{
+                @include tablet{
+                    display:flex;
+                    align-items: center;
+                    padding-right: 5vw;
+                }
+
+                @include desktop{
+                    padding-right: 7vw;
+                }
+            }
+            &--status{
+                @include tablet{
+                    display:flex;
+                    align-items: center;
+                    padding-right: 7.8vw;
+                }
+
+                @include desktop{
+                    padding-right: 6.6vw;
+                }
+            }
+            &--qty{
+                @include tablet{
+                    display:flex;
+                    align-items: center;
+                    padding-right: 3.9vw;
+                }
+
+                @include desktop{
+                    padding-right: 4.5vw;
+                }
+            }
+            &--warehouse{
+                @include tablet{
+                    display:flex;
+                    align-items: center;
+                    padding-right: 6vw;
+                }
+
+                @include desktop{
+                    padding-right: 12.5vw;
+                }
+            }
+        }
+
+        &__container{
+            border-top: 1px #BDC5D5 solid ;
+        }
+
+        &__card{
+            padding: 1rem;
+
+            @include tablet {
+                display:flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 1.5rem;
+            }
+
+            @include desktop{
+                padding: 1rem 2rem;
+            }
+
+            &-info{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 65vw;
+            padding-bottom: .625rem;
+
+            @include tablet{
+                align-items: center;
+                padding: 0;
+                width: 70vw;
+            }
+
+            @include desktop{
+                width: 60vw;
+            }
+            
+
+                &-ic{
+                    display:flex;
+                    flex-direction: column;
+
+                    @include tablet{
+                        flex-direction:row;
+                        width: 35vw;
+                        justify-content: space-between;
+                        align-items:center;
+                    }
+
+                    @include desktop{
+                        width: 30vw;
+                    }
+
+                    &--item{
+                        padding-bottom: .625rem;
+
+                        @include tablet{
+                            padding: 0;
+                        }
+                    
+                        &-ic{
+                        display:flex;
+                        flex-direction: row;
+                        align-items:center;
+
+                            &-name{
+                                color: #2E66E5;
+                                font-weight: 550;
+                            }
+                        }
+                    }
+
+                    &--category{
+                        width: 30vw;
+                        @include tablet{
+                            width: 15vw;
+                        }
+
+                        @include desktop{
+                            width: 13vw;
+                        }
+
+                        &-txt{
+                            @include tablet{
+                                width: 12.978vw;
+                            }
+                        }
+                    }
+                }
+
+                &-sq{
+                    display:flex;
+                    flex-direction: column;
+                    width: 24vw;
+
+                    @include tablet{
+                        flex-direction:row;
+                        width: 38vw;
+                        justify-content: space-between;
+                        align-items:center;
+                    }
+
+                    @include desktop{
+                        width: 30vw;
+                    }
+
+                    &--status{
+                        padding-bottom: 1.0625rem;
+
+                        @include tablet{
+                            padding: 0;
+                            width: 12vw;
+                        }
+
+                        @include desktop{
+                            width: 7vw;
+                        }
+
+                        &-container--in-stock{
+                            background-color: rgba(21, 132, 99, .07);
+                            align-content: center;
+                            border-radius: 1.25rem;
+                            padding: 2px 4px;
+                        }
+
+                        &-container--out-of-stock{
+                            background-color: rgba(201,69,21, .07);
+                            align-content: center;
+                            border-radius: 1.25rem;
+                            padding: 2px 4px;
+                        }
+
+                        &-txt--in-stock{
+                            color: rgb(21,132,99);
+                            font-weight:550;
+                            text-align: center;
+                        }
+
+                        &-txt--out-of-stock{
+                            color: rgb(201,69,21);
+                            font-weight:550;
+                            text-align: center;
+                        }
+                    }
+
+                    &--quantity{
+                        
+                        @include tablet{
+                            width: 5vw;
+                        }
+
+                        @include desktop{
+                            width: 3vw;
+                        }
+                    }
+
+
+                    &--warehouse{
+                        padding-top: .625rem;
+
+                        @include tablet{
+                            padding: 0;
+                            width: 10vw;
+                        }
+                    }
+                }
+            }
+
+            &-info-de{
+                display:flex;
+                justify-content: space-between;
+
+                @include tablet{
+                    width: 10vw;
+                    justify-content: center;
+                }
+
+                &-delete{
+                    @include tablet{
+                        padding-right: .625rem;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: .75rem;
+
+    @include tablet{
+        font-size: .875rem;
+    }
+}
+
+h3 {
+    font-size: .625rem;
+    line-height: 1.125rem;
+    color: #5C667E;
+
+    @include tablet {
+        display:none;
+    }
+}
+
+h2 {
+    font-size: .75rem;
+    line-height: 1.125rem;
+    color: #5C667E;
+}

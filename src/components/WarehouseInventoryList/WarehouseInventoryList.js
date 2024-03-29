@@ -25,11 +25,11 @@ function WarehouseInventoryList({id}){
             <table className='inventory'>
                 <thead className='inventory__headers'>
                     <tr className='inventory__headers-row'>
-                        <th className='inventory__header'>INVENTORY ITEM</th>
-                        <th className='inventory__header'>CATEGORY</th>
-                        <th className='inventory__header'>STATUS</th>
-                        <th className='inventory__header'>QUANTITY</th>
-                        <th className='inventory__header'>ACTION</th>
+                        <th className='inventory__header'><span className='inventory__text inventory__text--left'>INVENTORY ITEM</span></th>
+                        <th className='inventory__header'><span className='inventory__text'>CATEGORY</span></th>
+                        <th className='inventory__header'><span className='inventory__text'>STATUS</span></th>
+                        <th className='inventory__header'><span className='inventory__text'>QUANTITY</span></th>
+                        <th className='inventory__header'><span className='inventory__text inventory__text--right'>ACTION</span></th>
                     </tr>
                 </thead>
                 <tbody>

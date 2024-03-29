@@ -4,16 +4,91 @@
 .inventory{
 
     width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
 
     &__headers{
         display: none;
+
+        @include tablet{
+            display: revert;
+            font-size: 0.75rem;
+            line-height: 1.5;
+            width: 100%;
+        }
     }
 
+    &__headers-row{
+        text-align: left;
+        width: 100%;
+        background-color: rgba(247, 248, 249, 0.70);
+    }
+
+    &__header{
+
+        &:nth-child(1){
+            width: 25.7%;
+        }
+
+        &:nth-child(2){
+            width: 17.2%;
+        }
+
+        &:nth-child(3){
+            width: 25.85%;
+        }
+
+        &:nth-child(4){
+            width: 13.35%;
+        }
+        &:nth-child(5){
+            text-align: right;
+        }
+    }
+
+    &__text{
+        color: $secondary1;
+        display: flex;
+        column-gap: 0.25rem;
+        padding: 0.75rem 0;
+
+        &::after{
+            content: '';
+            display: inline-block;
+            min-width: 1rem;
+            min-height: 1rem;
+            background-image: url('../../assets/icons/sort-24px.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        &--left{
+            padding-left: 2rem;
+        }
+    
+        &--right{
+            padding-right: 2rem;
+            justify-content: end;
+        }
+    }
+
+    
+
     &__row{
+        border-top: 1px solid $secondary2;
         display: flex;
         flex-wrap: wrap;
         padding: 1rem 1.5rem 1.5rem 1.5rem;
         row-gap: 1rem;
+
+        @include tablet{
+            display: revert;
+            padding: 0;
+
+            &:first-of-type{
+                border-top: none;
+            }
+        }
     }
 
     &__data{
@@ -24,6 +99,12 @@
         padding-top: 1.25rem;
         margin-top: 0.25rem;
 
+        @include tablet{
+            margin: 0;
+            width: 100%;
+            padding: 1rem 0;
+        }
+
         &::before{
             color: $secondary1;
             font-size: 0.6875rem;
@@ -31,6 +112,10 @@
             font-weight: $bold;
             position: absolute;
             top: 0;
+
+            @include tablet{
+                display: none;
+            }
         }
 
         &--item{
@@ -48,6 +133,10 @@
                 display: inline-block;
                 min-height: 20px;
                 min-width: 20px;
+            }
+
+            @include tablet{
+                padding-left: 2rem;
             }
         }
 
@@ -106,6 +195,12 @@
         display: flex;
         width: 100%;
         order: 5;
+
+        @include tablet{
+            padding-right: 2rem;
+            justify-content: end;
+            column-gap: 1rem;
+        }
     }
 
     &__action{

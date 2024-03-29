@@ -23,8 +23,8 @@ function DeleteInventoryItem() {
                             <h5 className='delete__body'>Please confirm that you'd like to delete Television from the inventory list. You won't be able to undo this action.</h5>
                         </section>
                         <section className='delete__container-buttons'>
-                            <button className='delete__cancel-button' onClick={toggleModal}><h3 className='delete__cancel-button--heading'>Cancel</h3></button>
-                            <button className='delete__delete-button'><h3 className='delete__delete-button--heading'>Delete</h3></button>
+                            <button className='delete__cancel-button' onClick={toggleModal}>Cancel</button>
+                            <button className='delete__delete-button' onClick={toggleModal}>Delete</button>
                         </section>
                     </article>
                 </main>

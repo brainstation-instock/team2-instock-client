@@ -1,20 +1,32 @@
+
 import { useState, useEffect } from 'react'
+
+import React, { useState, useEffect } from 'react' // imported React for toggleModal functionality
+import { NavLink, Link } from 'react-router-dom' // consolidated all react-router-dom calls
+
 import axios from 'axios'
 import searchIcon from '../../assets/icons/search-24px.svg'
 import deleteIcon from '../../assets/icons/delete_outline-24px.svg'
 import editIcon from '../../assets/icons/edit-24px.svg'
 import chvrnRight from '../../assets/icons/chevron_right-24px.svg'
-import './WarehouseList.scss'
-import {NavLink, Link} from 'react-router-dom'
 import sortIcon from '../../assets/icons/sort-24px.svg'
+import './WarehouseList.scss'
+import DeleteWarehouse from '../DeleteWarehouse/DeleteWarehouse'
+
+const baseUrl = process.env.REACT_APP_BASE_URL;
+const warehousesUrl = `${baseUrl}/api/warehouses`;
 
 function WarehouseList() {
 
+
+    // Declare variables
+
     const [warehouses, setWarehouses] = useState([]);
-    
+    const [modal, setModal] = useState(null);
+
     useEffect(() => {
         axios
-        .get('http://localhost:8080/api/warehouses')
+        .get(warehousesUrl)
         .then((response) => {
             setWarehouses(response.data)
         })
@@ -26,6 +38,27 @@ function WarehouseList() {
         return(
             <p>Loading..</p>
         )
+    }
+
+    // Toggle visibility with toggleModal
+    const toggleModal = (warehouseId) => {
+        setModal(warehouseId);
+        // Disable scrolling when the modal is opened
+        document.body.style.overflow = 'hidden';
+    };
+    // Allow scrolling when the modal is closed
+    const closeModal = () => {
+        setModal(null);
+        document.body.style.overflow = 'auto';
+    };
+    // Refresh Warehouses after Delete button is selected
+    const refreshWarehouses = () => {
+        axios.get(warehousesUrl).then((response) => {
+            setWarehouses(response.data);
+        })
+        .catch((error) => {
+            console.error(error);
+        })
     }
 
     return (
@@ -83,7 +116,7 @@ function WarehouseList() {
                                 <div className="warehouses-list__card-info-wa">
                                     <div className="warehouses-list__card-info-wa--warehouse">
                                         <h3 className="warehouses-list__card-info-wa--warehouse-label">WAREHOUSE</h3>
-                                        <Link key={warehouse.id} to={`/warehouses/${warehouse.id}`} className="warehouses-list__card-info-wa--warehouse-nc">
+                                        <Link key={warehouse.id} to={`/warehouses/${warehouse.id}/inventories`} className="warehouses-list__card-info-wa--warehouse-nc">
                                             <p className="warehouses-list__card-info-wa--warehouse-nc-name">{warehouse.warehouse_name}</p>
                                             <img className="warehouses-list__card-info-wa--warehouse-nc-chevron" alt="chevron-right" src={chvrnRight}/>
                                         </Link>
@@ -108,20 +141,17 @@ function WarehouseList() {
                                 </div>
                             </div>
                                 <div className="warehouses-list__card-info-de">
-                                    <Link to={`/warehouses/${warehouse.id}/delete`}>
-                                    <img className="warehouses-list__card-info-de-delete" alt="delete-icon" src={deleteIcon}/>
-                                    </Link>
+                                    <img className="warehouses-list__card-info-de-delete" alt="delete-icon" src={deleteIcon} onClick={() => toggleModal(warehouse.id)}/>
                                     <Link to={`/warehouses/${warehouse.id}/edit`}>
                                     <img className="warehouses-list__card-info-de-edit" alt="edit-icon" src={editIcon}/>
                                     </Link>
                                 </div>
                             </div>
-                
-                            
+                            {modal === warehouse.id && 
+                            <DeleteWarehouse toggleModal={closeModal} warehouse={warehouse} refreshWarehouses={refreshWarehouses} />}
                         </article>
                 ))
                     }
-            
         </section>
     </main> 
     )

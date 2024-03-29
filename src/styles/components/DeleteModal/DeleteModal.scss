@@ -1,16 +1,30 @@
 @use '../../../styles/partials/mixins' as *;
 @use '../../../styles/partials/variables' as *;
+
 article {
     z-index: 2;
     height: 100%;
     @include display (column, space-between, nowrap);
     background-color: $primary3;
 }
+
 section {
     z-index: 2;
     background-color: $primary3;
 }
+
 .delete {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include tablet {
+        top: 70%;
+    }
+    @include desktop {
+        top: 54%;
+    }
+
     &__body {
         @include tablet {
             padding-left: 4rem;
@@ -18,78 +32,99 @@ section {
             padding-top: 1rem;
         }
     }
+
     &__cancel-button {
+        color: $secondary1;
         border: 1px solid $secondary2;
+        cursor: pointer;
+        @include typography-style (0.8125rem, 1.25rem, 600);
+        @include tablet {
+            @include typography-style (0.875rem, 1.375rem, 600);
+        }
+
         &:hover {
             border-color: $primary2;
             color: $primary2;
         }
-        &--heading {
-            color: $secondary1;
-            &:hover {
-                color: $primary2;
-            }
-        }
     }
+
     &__close {
         display: flex;
         margin-left: auto;
-        padding-top: 1rem;
+        margin-top: 1rem;
+        cursor: pointer;
+
         @include tablet {
-            padding-top: 1rem;
-            padding-right: 1rem;
+            margin-top: 1rem;
+            margin-right: 1rem;
         }
     }
+
     &__container-buttons {
         @include display (row, flex-start, nowrap);
         gap: 1rem;
         height: 100%;
         align-items: end;
+
         @include tablet {
             justify-content: flex-end;
             padding: 2rem 4rem 2.5rem 4rem;
         }
     }
+
     &__delete-button {
         background-color: $support2;
         border: none;
         color: $primary3;
+        cursor: pointer;
+
+        @include typography-style (0.8125rem, 1.25rem, 600);
+
+        @include tablet {
+            @include typography-style (0.875rem, 1.375rem, 600);
+        }
+
         &:hover {
             background-color: $background1;
         }
-        &--heading {
-            color: $primary3;
-        }
     }
+
     &__heading {
         padding-top: 1.25rem;
         padding-bottom: 1.5rem;
+
         @include tablet {
             padding: 0 4rem;
         }
     }
+
     &__modal {
         @include padding-mobile;
         height: 100vh;
+        width: 100vw;
         padding-bottom: 1rem;
+
         @include tablet {
-            height: 100%;
-            width: 90%;
+            height: auto;
+            width: 85%;
             margin: auto;
             position: relative;
-            top: 20vh;
+            bottom: 40vh;
             box-shadow: 0 2px 5px rgba(19, 24, 44, .10);
             border-radius: 0.25rem;
         }
+
         @include desktop {
             width: 55%;
+            bottom: 36vh;
         }
     }
+
     &__overlay {
         @include tablet {
             width: 100vw;
             height: 100vh;
-            position: absolute;
+            position: fixed;
             z-index: 1;
             top: 0;
             left: 0;

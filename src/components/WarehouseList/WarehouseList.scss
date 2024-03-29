@@ -181,6 +181,7 @@
 
             @include tablet{
                 align-items: center;
+                padding-bottom: 0;
             }
             
 
@@ -280,28 +281,4 @@
 
 a {
     text-decoration: none;
-}
-
-p {
-    font-size: .75rem;
-
-    @include tablet{
-        font-size: .875rem;
-    }
-}
-
-h3 {
-    font-size: .625rem;
-    line-height: 1.125rem;
-    color: #5C667E;
-
-    @include tablet {
-        display:none;
-    }
-}
-
-h2 {
-    font-size: .75rem;
-    line-height: 1.125rem;
-    color: #5C667E;
 }

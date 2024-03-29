@@ -74,6 +74,26 @@
                 content: 'QTY';
             }
         }
+
+        &--in{
+            background: rgba(21, 132, 99, 0.1);
+            border-radius: 20px;
+            color: $support1;
+            font-weight: $bold;
+            width: fit-content;
+            padding: 0.25rem 0.5rem;
+            text-transform: uppercase;
+        }
+
+        &--out{
+            background: rgba(201, 69, 21, 0.1);
+            border-radius: 20px;
+            color: $support2;
+            font-weight: $bold;
+            width: fit-content;
+            padding: 0.25rem 0.5rem;
+            text-transform: uppercase;
+        }
     }
 
     &__link{
@@ -81,9 +101,33 @@
         font-weight: $bold;
     }
 
-    &__action{
+    &__actions{
+        justify-content: space-between;
         display: flex;
         width: 100%;
         order: 5;
+    }
+
+    &__action{
+        display: flex;
+        min-width: 1.5rem;
+        min-height: 1.5rem;
+        max-width: 1.5rem;
+        max-height: 1.5rem;
+
+        &--delete{
+            background-image: url('../../assets/icons/delete_outline-24px.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            border: none;
+            border-radius: none;
+            cursor: pointer;
+            padding: 0;
+            width: unset;
+        }
+
+        &--edit{
+            background-image: url('../../assets/icons/edit-24px.svg');
+        }
     }
 }

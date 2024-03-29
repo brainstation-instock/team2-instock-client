@@ -44,11 +44,13 @@ function WarehouseInventoryList({id}){
                                         <Link to={`/inventories/${inventory.id}`} className='inventory__link'>{inventory.item_name}</Link>
                                     </td>
                                     <td className='inventory__data inventory__data--category'>{inventory.category}</td>
-                                    <td className={`inventory__data inventory__data--status ${statusStyle}`}>{inventory.status}</td>
+                                    <td className='inventory__data inventory__data--status'>
+                                        <p className={`${statusStyle}`}>{inventory.status}</p>
+                                    </td>
                                     <td className='inventory__data inventory__data--quantity'>{inventory.quantity}</td>
-                                    <td className='inventory__action'>
-                                        <button className='inventory__delete'>delete</button>
-                                        <Link className='inventory__edit'>Edit</Link>
+                                    <td className='inventory__actions'>
+                                        <button className='inventory__action inventory__action--delete'></button>
+                                        <Link to={`/inventories/${inventory.id}/edit`} className='inventory__action inventory__action--edit'></Link>
                                     </td>
                                 </tr>
                             );

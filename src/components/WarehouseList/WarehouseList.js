@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react'
 
-import React, { useState, useEffect } from 'react' // imported React for toggleModal functionality
+import React from 'react' // imported React for toggleModal functionality
 import { NavLink, Link } from 'react-router-dom' // consolidated all react-router-dom calls
 
 import axios from 'axios'
@@ -12,6 +12,8 @@ import chvrnRight from '../../assets/icons/chevron_right-24px.svg'
 import sortIcon from '../../assets/icons/sort-24px.svg'
 import './WarehouseList.scss'
 import DeleteWarehouse from '../DeleteWarehouse/DeleteWarehouse'
+
+
 
 const baseUrl = process.env.REACT_APP_BASE_URL;
 const warehousesUrl = `${baseUrl}/api/warehouses`;

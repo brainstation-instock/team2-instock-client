@@ -13,8 +13,17 @@ function AddInventoryItem() {
     const AddItem = (e) => {
         e.preventDefault();
 
+        function isNumber(str) {
+            return /^-?\d+$/.test(str);
+        }
+
         if(formRef.current.item_name.value === "" || formRef.current.description.value === "" || formRef.current.category.value === "" || formRef.current.warehouse_name.value === ""){
             alert("Both fields must be filled!");
+            return;
+         }
+
+         if(!isNumber(formRef.current.quantity.value)){
+            alert("Quantity must be a valid number!");
             return;
          }
 

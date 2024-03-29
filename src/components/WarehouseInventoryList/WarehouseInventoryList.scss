@@ -1,0 +1,250 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.inventory{
+
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    &__headers{
+        display: none;
+
+        @include tablet{
+            display: revert;
+            font-size: 0.75rem;
+            line-height: 1.5;
+            width: 100%;
+        }
+    }
+
+    &__headers-row{
+        text-align: left;
+        width: 100%;
+        background-color: rgba(247, 248, 249, 0.70);
+    }
+
+    &__header{
+
+        &:nth-child(1){
+            width: 25.7%;
+        }
+
+        &:nth-child(2){
+            width: 17.2%;
+        }
+
+        &:nth-child(3){
+            width: 25.85%;
+        }
+
+        &:nth-child(4){
+            width: 13.35%;
+        }
+        &:nth-child(5){
+            text-align: right;
+        }
+    }
+
+    &__text{
+        color: $secondary1;
+        display: flex;
+        column-gap: 0.25rem;
+        padding: 0.75rem 0;
+
+        &::after{
+            content: '';
+            display: inline-block;
+            min-width: 1rem;
+            min-height: 1rem;
+            background-image: url('../../assets/icons/sort-24px.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        &--left{
+            padding-left: 2rem;
+
+            @include desktop{
+                padding-left: 2.5rem;
+            }
+        }
+    
+        &--right{
+            padding-right: 2rem;
+            justify-content: end;
+
+            @include desktop{
+                padding-right: 2.5rem;
+            }
+        }
+    }
+
+    
+
+    &__row{
+        border-top: 1px solid $secondary2;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem 1.5rem 1.5rem 1.5rem;
+        row-gap: 1rem;
+
+        @include tablet{
+            display: revert;
+            padding: 0;
+
+            &:first-of-type{
+                border-top: none;
+            }
+        }
+    }
+
+    &__data{
+        width: 50%;
+        position: relative;
+        font-size: 0.8125rem;
+        line-height: 1.53846;
+        padding-top: 1.25rem;
+        margin-top: 0.25rem;
+
+        @include tablet{
+            margin: 0;
+            width: 100%;
+            padding: 1rem 0;
+        }
+
+        &::before{
+            color: $secondary1;
+            font-size: 0.6875rem;
+            line-height: 1.45;
+            font-weight: $bold;
+            position: absolute;
+            top: 0;
+
+            @include tablet{
+                display: none;
+            }
+        }
+
+        &--item{
+            display: flex;
+            order: 1;
+
+            &::before{
+                content: 'INVENTORY ITEM';
+            }
+
+            &::after{
+                content: '';
+                background-image: url('../../assets/icons/chevron_right-24px.svg');
+                background-size: cover;
+                display: inline-block;
+                min-height: 20px;
+                min-width: 20px;
+            }
+
+            @include tablet{
+                padding-left: 2rem;
+            }
+
+            @include desktop{
+                padding-left: 2.5rem;
+            }
+        }
+
+        &--category{
+            order: 3;
+
+            &::before{
+                content: 'CATEGORY';
+            }
+        }
+
+        &--status{
+            order: 2;
+
+            &::before{
+                content: 'STATUS';
+            }
+
+            @include tablet{
+                padding: 1rem 0;
+            }
+        }
+
+        &--quantity{
+            order: 4;
+
+            &::before{
+                content: 'QTY';
+            }
+        }
+
+        &--in{
+            background: rgba(21, 132, 99, 0.1);
+            border-radius: 20px;
+            color: $support1;
+            font-weight: $bold;
+            width: fit-content;
+            padding: 0.25rem 0.5rem;
+            text-transform: uppercase;
+        }
+
+        &--out{
+            background: rgba(201, 69, 21, 0.1);
+            border-radius: 20px;
+            color: $support2;
+            font-weight: $bold;
+            width: fit-content;
+            padding: 0.25rem 0.5rem;
+            text-transform: uppercase;
+        }
+    }
+
+    &__link{
+        color: $primary2;
+        font-weight: $bold;
+    }
+
+    &__actions{
+        justify-content: space-between;
+        display: flex;
+        width: 100%;
+        order: 5;
+
+        @include tablet{
+            padding-right: 2rem;
+            justify-content: end;
+            column-gap: 1rem;
+            position: relative;
+            top: 0.5rem;
+        }
+
+        @include desktop{
+            padding-right: 2.5rem;
+        }
+    }
+
+    &__action{
+        display: flex;
+        min-width: 1.5rem;
+        min-height: 1.5rem;
+        max-width: 1.5rem;
+        max-height: 1.5rem;
+        
+        &--delete{
+            background-image: url('../../assets/icons/delete_outline-24px.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            border: none;
+            border-radius: none;
+            cursor: pointer;
+            padding: 0;
+            width: unset;
+        }
+
+        &--edit{
+            background-image: url('../../assets/icons/edit-24px.svg');
+        }
+    }
+}

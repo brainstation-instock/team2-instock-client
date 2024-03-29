@@ -20,17 +20,16 @@ function WarehouseDetails({id}){
     if(!warehouse){
         return <h1>Loading...</h1>
     }
-
-    console.log(warehouse);
+    
     return(
         <>
             <section className='warehouse'>
                 <div className='warehouse__header'>
-                    <Link className='warehouse__back warehouse__link'>
+                    <Link to={'/warehouses'} className='warehouse__back warehouse__link'>
                         <img src={back} alt="back to warehouse list" />
                     </Link>
                     <h1 className='warehouse__name'>{warehouse.warehouse_name}</h1>
-                    <Link className='warehouse__edit warehouse__link'>
+                    <Link to={`/warehouses/${warehouse.id}/edit`} className='warehouse__edit warehouse__link'>
                         <span className='warehouse__edit-img'></span>
                         <span className='warehouse__text warehouse__edit-txt'>Edit</span>
                     </Link>

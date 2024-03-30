@@ -18,12 +18,17 @@
         margin-right: 8.125rem;
     }
 
+    &__back-button {
+        max-height: 1.5rem;
+    }
+
     &-container {
         border-bottom: 1px solid $secondary2;
         padding: 1.5rem 1rem;
         @include display (row, flex-start, nowrap);
         gap: 0.5rem;
         border-radius: 4px 4px 0 0;
+        align-items: center;
         @include tablet {
             @include padding-tablet;
         }

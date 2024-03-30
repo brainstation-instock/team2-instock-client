@@ -47,67 +47,74 @@ function AddInventoryItem() {
     return (
         <>
             <Header isWarehouse={false}/>
-            <section>
-                <img alt="back-icon" src={backIcon} onClick={() => navigate('/')} role="button" />
-                <h1>Add New Inventory Item</h1>
-            </section>
-            <section>
-                <form onSubmit={AddItem} ref={formRef}>
-                    <div>
-                        <div>
-                            <h2>Item Details</h2>
+            <main className="add-item">
+                <section className="add-item-container">
+                    <img className="add-item__back-button" alt="back-icon" src={backIcon} onClick={() => navigate('/')} role="button" />
+                    <h1 className="add-item__heading">Add New Inventory Item</h1>
+                </section>
+                <section>
+                    <form onSubmit={AddItem} ref={formRef}>
+                        <div className="details__form">
+                            <div className="details__form-item-details">
+                                <h2 className="details__form-heading">Item Details</h2>
 
-                            <label htmlFor='item_name'> Item Name
-                                <input type='text' id='item_name' placeholder="Item Name"/>
-                            </label>
+                                <label className="details__form-label" htmlFor='item_name'> Item Name
+                                    <input className='details__form-input' type='text' id='item_name' placeholder="Item Name"/>
+                                </label>
 
-                            <label htmlFor='description'> Description
-                                <input type='text' id='description' placeholder="Please enter a brief item description..."/>
-                            </label>
+                                <label className="details__form-label" htmlFor='description'> Description
+                                    <textarea className='details__form-input--textarea' type='textarea' id='description' placeholder="Please enter a brief item description..."/>
+                                </label>
 
-                            <label htmlFor='category'> Category
-                                <select id='category' defaultValue={''}>
-                                    <option value="" disabled>Please select</option>
-                                    <option value="Accessories">Accessories</option>
-                                    <option value="Apparel">Apparel</option>
-                                    <option value="Electronics">Electronics</option>
-                                    <option value="Gear">Gear</option>
-                                    <option value="Health">Health</option>
-                                </select>
-                            </label>
+                                <label className="details__form-label" htmlFor='category'> Category
+                                    <select className='details__form-input--dropdown' id='category' defaultValue={''}>
+                                        <option value="" disabled>Please select</option>
+                                        <option value="Accessories">Accessories</option>
+                                        <option value="Apparel">Apparel</option>
+                                        <option value="Electronics">Electronics</option>
+                                        <option value="Gear">Gear</option>
+                                        <option value="Health">Health</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div className="details__form-stock">
+                                <h2 className="details__form-heading">Item Availability</h2>
+                                <div className="details__form-status">
+                                    <h3 className="details__form-status-label">Status</h3>
+                                    <label className="details__form-status-inputs" htmlFor='status'> 
+                                        <div className="details__form-status-inputs--in-stock">
+                                        <input id='status' type="radio" value="In Stock" defaultChecked name="status"/> <p className="stock-txt">In Stock</p>
+                                        </div>
+                                        <div className="details__form-status-inputs--out-of-stock">
+                                        <input id='status' type="radio" value="Out Of Stock" name="status"/> <p className="stock-txt">Out Of Stock</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <label className={`details__form-label--${formRef.current.status.value === "Out Of Stock" ? 'out-of-stock' : 'in-stock'}`} htmlFor='quantity'> Quantity
+                                    <input className='details__form-input' id='quantity' type="text" defaultValue="0"/>
+                                </label>
+
+                                <label className="details__form-label" htmlFor='warehouse_id'>
+                                    <select className='details__form-input--dropdown' id='warehouse_id' defaultValue={''}>
+                                        <option value="" disabled>Please select</option>
+                                        <option value="1">Manhattan</option>
+                                        <option value="2">Washington</option>
+                                        <option value="3">Jersey</option>
+                                        <option value="4">San Francisco</option>
+                                        <option value="5">Santa Monica</option>
+                                        <option value="6">Seattle</option>
+                                        <option value="7">Miami</option>
+                                    </select>
+                                </label>
+                            </div>
                         </div>
-                        <div>
-                            <h2>Item Availability</h2>
-
-                            <label htmlFor='status'> Status
-                                <input id='status' type="radio" value="In Stock" defaultChecked name="status"/> In Stock
-                                <input id='status' type="radio" value="Out Of Stock" name="status"/> Out Of Stock
-                            </label>
-
-                            <label htmlFor='quantity'> Quantity
-                                <input id='quantity' type="text" defaultValue="0"/>
-                            </label>
-
-                            <label htmlFor='warehouse_id'>
-                                <select id='warehouse_id' defaultValue={''}>
-                                    <option value="" disabled>Please select</option>
-                                    <option value="1">Manhattan</option>
-                                    <option value="2">Washington</option>
-                                    <option value="3">Jersey</option>
-                                    <option value="4">San Francisco</option>
-                                    <option value="5">Santa Monica</option>
-                                    <option value="6">Seattle</option>
-                                    <option value="7">Miami</option>
-                                </select>
-                            </label>
+                        <div className="details__form-btns">
+                            <button className='details__form-cancel' onClick={() => navigate('/')}>Cancel</button>
+                            <button className='details__form-add' type="submit">+ Add Item</button>
                         </div>
-                    </div>
-                    <div>
-                        <button onClick={() => navigate('/')}>Cancel</button>
-                        <button type="submit">+ Add Item</button>
-                    </div>
-                </form>
-            </section>
+                    </form>
+                </section>
+            </main>
         </>
     )
 }

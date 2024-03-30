@@ -12,7 +12,6 @@ import './WarehouseList.scss'
 import DeleteWarehouse from '../DeleteWarehouse/DeleteWarehouse'
 
 
-
 const baseUrl = process.env.REACT_APP_BASE_URL;
 const warehousesUrl = `${baseUrl}/api/warehouses`;
 

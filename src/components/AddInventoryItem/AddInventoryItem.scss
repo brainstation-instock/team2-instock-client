@@ -57,6 +57,7 @@
         &-label{
             display:flex;
             flex-direction: row;
+            @include typography-style (0.8125rem, 1.25rem, 600)
 
     
         }
@@ -218,6 +219,8 @@
         display:flex;
         flex-direction: column;
 
+        -status
+
         &--in-stock{
             @include typography-style (0.8125rem, 1.25rem, 600);
             padding-bottom: 0.25rem;
@@ -268,7 +271,7 @@
     border-radius: 1.25rem;
 }
 
-.details__form-input--textarea:focus{
+.details__add-form-input--textarea:focus{
     outline:none;
 }
 

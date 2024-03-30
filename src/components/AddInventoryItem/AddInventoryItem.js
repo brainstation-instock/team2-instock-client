@@ -37,7 +37,7 @@ function AddInventoryItem() {
             category: formRef.current.category.value,
             status: formRef.current.status.value,
             quantity: formRef.current.quantity.value,
-            warehouse_id: formRef.current.warehouse_id.value,
+            warehouse_id: formRef.current.warehouse_id.value
             
         })
 

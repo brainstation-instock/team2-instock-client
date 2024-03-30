@@ -164,7 +164,9 @@
         }
 
         &--textarea{
-            height:20vh;
+            border:none;
+            padding-top: 5px;
+
         }
         
     }
@@ -223,4 +225,22 @@
 
 .stock-txt{
     padding-left: 10px;
+}
+
+.textarea-container {
+    border: 1px solid $secondary2;
+    height: 13vh;
+    border-radius: 1.25rem;
+}
+
+.details__form-input--textarea:focus{
+    outline:none;
+}
+
+.textarea-container:focus-within {
+    border: 2px solid #2E66E5;
+}
+
+input:focus{
+    outline: 2px solid #2E66E5;
 }

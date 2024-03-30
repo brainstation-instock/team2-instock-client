@@ -62,9 +62,13 @@ function AddInventoryItem() {
                                     <input className='details__form-input' type='text' id='item_name' placeholder="Item Name"/>
                                 </label>
 
+                                
                                 <label className="details__form-label" htmlFor='description'> Description
-                                    <textarea className='details__form-input--textarea' type='textarea' id='description' placeholder="Please enter a brief item description..."/>
+                                    <div className="textarea-container">
+                                        <textarea className='details__form-input--textarea' type='textarea' id='description' placeholder="Please enter a brief item description..."/>
+                                    </div>
                                 </label>
+                                
 
                                 <label className="details__form-label" htmlFor='category'> Category
                                     <select className='details__form-input--dropdown' id='category' defaultValue={''}>
@@ -89,8 +93,9 @@ function AddInventoryItem() {
                                         <input id='status' type="radio" value="Out Of Stock" name="status"/> <p className="stock-txt">Out Of Stock</p>
                                         </div>
                                     </label>
+                                 {/* ${formRef.current.status.value === 'Out Of Stock' ? 'out-of-stock' : 'in-stock'}  */}
                                 </div>
-                                <label className={`details__form-label--${formRef.current.status.value === "Out Of Stock" ? 'out-of-stock' : 'in-stock'}`} htmlFor='quantity'> Quantity
+                                <label className={`details__form-label`} htmlFor='quantity'> Quantity
                                     <input className='details__form-input' id='quantity' type="text" defaultValue="0"/>
                                 </label>
 

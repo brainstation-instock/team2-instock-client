@@ -64,7 +64,7 @@
         color: $primary3;
         cursor: pointer;
         @include typography-style (0.8125rem, 1.25rem, 600);
-
+        white-space: nowrap;
         @include tablet {
             @include typography-style (0.875rem, 1.375rem, 600);
         }
@@ -127,6 +127,13 @@
         @include typography-style (0.8125rem, 1.25rem, 600);
         padding-bottom: 0.25rem;
         margin-top: 0.5rem;
+    }
+
+    &-link {
+        width: 100%;
+        @include tablet {
+            text-align: right;
+        }
     }
 
     &-sections {

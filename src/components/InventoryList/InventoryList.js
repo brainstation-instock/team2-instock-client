@@ -35,8 +35,8 @@ function InventoryList() {
     }
 
     // Toggle visibility with toggleModal
-    const toggleModal = (inventoriesId) => {
-        setModal(inventoriesId);
+    const toggleModal = (inventoryItemId) => {
+        setModal(inventoryItemId);
         // Disable scrolling when the modal is opened
         document.body.style.overflow = 'hidden';
     };
@@ -60,7 +60,6 @@ function InventoryList() {
             <header className="items-header">
                 <h1 className="items-header__title">Inventory</h1>
                 <div className="items-header__search-bar">
-
                     <form>
                         <label>
                             <div className="items-header__search-bar__container">
@@ -144,15 +143,15 @@ function InventoryList() {
                                     </div>
                                 </div>
                                 <div className="items-list__card-info-de">
-                                    <img className="items-list__card-info-de-delete" alt="delete-icon" src={deleteIcon} onClick={() => toggleModal(item)} />
+                                    <img className="items-list__card-info-de-delete" alt="delete-icon" src={deleteIcon} onClick={() => toggleModal(item.id)} />
                                     <Link to={`/items/${item.id}/edit`}>
                                         <img className="items-list__card-info-de-edit" alt="edit-icon" src={editIcon} />
                                     </Link>
                                 </div>
                             </div>
-                            {modal === item && (
+                            {modal === item.id && 
                                 <DeleteInventoryItem toggleModal={closeModal} item={item} refreshInventories={refreshInventories} />
-                            )}
+                            }
                         </article>
                     ))
                 }

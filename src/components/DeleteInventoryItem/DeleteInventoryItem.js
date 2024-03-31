@@ -25,10 +25,10 @@ function DeleteInventoryItem({ toggleModal, item, refreshInventories }) {
     return (
         <>
                 <main className='delete'>
-                    <div className='delete__overlay' onClick={toggleModal}></div>
+                    <div className='delete__overlay' onClick={handleCancel}></div>
                     <article className='delete__modal'>
                         <section className='delete__container'>
-                            <img className='delete__close' src={close} alt='close button' onClick={toggleModal} />
+                            <img className='delete__close' src={close} alt='close button' onClick={handleCancel} />
                             <h1 className='delete__heading'>Delete {item_name} inventory item?</h1>
                             <h5 className='delete__body'>Please confirm that you'd like to delete {item_name} from the inventory list. You won't be able to undo this action.</h5>
                         </section>

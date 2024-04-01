@@ -23,7 +23,7 @@
 
     &-header {
     
-    padding: 1.25rem;
+    padding: 1rem;
 
     @include tablet{
         display:flex;
@@ -55,7 +55,7 @@
             }
 
             @include desktop{
-                width: 39vw;
+                width: 35vw;
                 justify-content: space-between;
             }
             &__container{
@@ -85,7 +85,7 @@
             padding-top: 1rem;
 
             @include tablet{
-                padding: 0 1.25rem;
+                padding: 0 0;
             }
 
             &__btn{
@@ -464,4 +464,11 @@
 
 .items-list__card-info-ic--item-ic-name:hover{
     text-decoration:underline;
+}
+.items-header__search-bar--input:focus{
+    outline:none;
+}
+
+.items-header__search-bar__container:focus-within{
+    border: 2px $primary2 solid;
 }

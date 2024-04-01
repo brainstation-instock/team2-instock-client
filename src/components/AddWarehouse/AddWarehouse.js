@@ -78,7 +78,7 @@ function AddWarehouse() {
                     </section>
                 </article>
                 <div className='details__form-container'>
-                    <Link to='..'><button className='details__form-cancel'>Cancel</button></Link>
+                    <Link to='..' className='details__form-link'><button className='details__form-cancel'>Cancel</button></Link>
                     <button className='details__form-add' onClick={handleAdd}>+ Add Warehouse</button>
                 </div>
             </main>

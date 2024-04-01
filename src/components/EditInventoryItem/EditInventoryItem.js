@@ -70,7 +70,7 @@ function EditInventoryItem() {
             <main className="edit-item">
                 <section className="edit-item-container">
                     <img className="edit-item__back-button" alt="back-icon" src={backIcon} onClick={() => navigate('/inventories')} role="button" />
-                    <h1 className="edit-item__heading">Edit New Inventory Item</h1>
+                    <h1 className="edit-item__heading">Edit Inventory Item</h1>
                 </section>
                 <section>
                     <form onSubmit={editItem} ref={formRef}>

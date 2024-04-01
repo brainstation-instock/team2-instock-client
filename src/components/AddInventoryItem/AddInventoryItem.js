@@ -60,28 +60,35 @@ function AddInventoryItem() {
                             <div className="details__add-form-item-details">
                                 <h2 className="details__add-form-heading">Item Details</h2>
 
-                                <label className="details__add-form-label" htmlFor='item_name'> Item Name
-                                    <input className='details__add-form-input' type='text' id='item_name' placeholder="Item Name"/>
-                                </label>
+                                <div>
+                                    <h3 className="details__add-form-label">Item Name</h3>
+                                    <label htmlFor='item_name'>
+                                        <input className='details__add-form-input' type='text' id='item_name' placeholder="Item Name"/>
+                                    </label>
+                                </div>
 
+                                <div>
+                                    <h3 className="details__add-form-label">Description</h3>
+                                    <label htmlFor='description'>
+                                        <div className="textarea-container">
+                                            <textarea className='details__add-form-input--textarea' type='textarea' id='description' placeholder="Please enter a brief item description..."/>
+                                        </div>
+                                    </label>
+                                </div>
                                 
-                                <label className="details__add-form-label" htmlFor='description'> Description
-                                    <div className="textarea-container">
-                                        <textarea className='details__add-form-input--textarea' type='textarea' id='description' placeholder="Please enter a brief item description..."/>
-                                    </div>
-                                </label>
-                                
-
-                                <label className="details__add-form-label" htmlFor='category'> Category
-                                    <select className='details__add-form-input--dropdown' id='category' defaultValue={''}>
-                                        <option value="" disabled>Please select</option>
-                                        <option value="Accessories">Accessories</option>
-                                        <option value="Apparel">Apparel</option>
-                                        <option value="Electronics">Electronics</option>
-                                        <option value="Gear">Gear</option>
-                                        <option value="Health">Health</option>
-                                    </select>
-                                </label>
+                                <div>
+                                    <h3 className="details__add-form-label">Category</h3>
+                                    <label  htmlFor='category'> 
+                                        <select className='details__add-form-input--dropdown' id='category' defaultValue={''}>
+                                            <option value="" disabled>Please select</option>
+                                            <option value="Accessories">Accessories</option>
+                                            <option value="Apparel">Apparel</option>
+                                            <option value="Electronics">Electronics</option>
+                                            <option value="Gear">Gear</option>
+                                            <option value="Health">Health</option>
+                                        </select>
+                                    </label>
+                                </div>
                             </div>
                             <div className="details__add-form-stock">
                                 <h2 className="details__add-form-heading">Item Availability</h2>
@@ -97,22 +104,28 @@ function AddInventoryItem() {
                                     </label>
                                 </div>
                                 { isInStock && 
-                                    <label className={`details__add-form-label`} htmlFor='quantity'> Quantity
-                                    <input className='details__add-form-input--qty' id='quantity' type="text" defaultValue="0"/>
-                                    </label>}
-
-                                <label className="details__add-form-label" htmlFor='warehouse_id'>
-                                    <select className='details__add-form-input--dropdown' id='warehouse_id' defaultValue={''}>
-                                        <option value="" disabled>Please select</option>
-                                        <option value="1">Manhattan</option>
-                                        <option value="2">Washington</option>
-                                        <option value="3">Jersey</option>
-                                        <option value="4">San Francisco</option>
-                                        <option value="5">Santa Monica</option>
-                                        <option value="6">Seattle</option>
-                                        <option value="7">Miami</option>
-                                    </select>
-                                </label>
+                                    <div>
+                                        <h3 className="details__add-form-label">Quantity</h3>
+                                        <label htmlFor='quantity'>
+                                            <input className='details__add-form-input--qty' id='quantity' type="text" defaultValue="0"/>
+                                        </label>
+                                    </div>}
+                                
+                                <div>
+                                    <h3 className="details__add-form-label">Warehouse</h3>
+                                    <label htmlFor='warehouse_id'>
+                                        <select className='details__add-form-input--dropdown' id='warehouse_id' defaultValue={''}>
+                                            <option value="" disabled>Please select</option>
+                                            <option value="1">Manhattan</option>
+                                            <option value="2">Washington</option>
+                                            <option value="3">Jersey</option>
+                                            <option value="4">San Francisco</option>
+                                            <option value="5">Santa Monica</option>
+                                            <option value="6">Seattle</option>
+                                            <option value="7">Miami</option>
+                                        </select>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div className="details__add-form-btns">

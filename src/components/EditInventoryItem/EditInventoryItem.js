@@ -119,7 +119,7 @@ function EditInventoryItem() {
                                     <input className='details__edit-form-input--qty' id='quantity' type="text" defaultValue={isInStock ? item.quantity : '0'}/>
                                     </label>}
 
-                                <label className="details__edit-form-label" htmlFor='warehouse_id'>
+                                <label className="details__edit-form-label" htmlFor='warehouse_id'> Warehouse
                                     <select className='details__edit-form-input--dropdown' id='warehouse_id' defaultValue={item.warehouse_id}>
                                         <option value="" disabled>Please select</option>
                                         <option value="1">Manhattan</option>

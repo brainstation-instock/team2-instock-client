@@ -83,61 +83,66 @@ function InventoryList() {
             </header>
             <section className="items-list">
                 <div className="items-list__table-header">
-                    <div className="items-list__table-header--item">
-                        <h2 className="items-list__table-header--item-txt">INVENTORY ITEM</h2>
-                        <img alt='sort-icon' src={sortIcon} />
+                    <div className="items-list__table-header-ic">
+                        <div className="items-list__table-header--item">
+                            <h4 className="items-list__table-header--item-txt">INVENTORY ITEM</h4>
+                            <img alt='sort-icon' src={sortIcon} />
+                        </div>
+                        <div className="items-list__table-header--category">
+                            <h4>CATEGORY</h4>
+                            <img alt='sort-icon' src={sortIcon} />
+                        </div>
                     </div>
-                    <div className="items-list__table-header--category">
-                        <h2>CATEGORY</h2>
-                        <img alt='sort-icon' src={sortIcon} />
+                    <div className="items-list__table-header-sqw">
+                        <div className="items-list__table-header--status">
+                            <h4>STATUS</h4>
+                            <img alt='sort-icon' src={sortIcon} />
+                        </div>
+                        <div className="items-list__table-header--qty">
+                            <h4>QTY</h4>
+                            <img alt='sort-icon' src={sortIcon} />
+                        </div>
+                        <div className="items-list__table-header--warehouse">
+                            <h4>WAREHOUSE</h4>
+                            <img alt='sort-icon' src={sortIcon} />
+                        </div>
                     </div>
-                    <div className="items-list__table-header--status">
-                        <h2>STATUS</h2>
-                        <img alt='sort-icon' src={sortIcon} />
-                    </div>
-                    <div className="items-list__table-header--qty">
-                        <h2>QTY</h2>
-                        <img alt='sort-icon' src={sortIcon} />
-                    </div>
-                    <div className="items-list__table-header--warehouse">
-                        <h2>WAREHOUSE</h2>
-                        <img alt='sort-icon' src={sortIcon} />
-                    </div>
-                    <h2 className="items-list__table-header--actions">ACTIONS</h2>
+                    <h4 className="items-list__table-header--actions">ACTIONS</h4>
                 </div>
                 {
                     itemsArr.map((item) => (
+
                         <article key={item.id} className="items-list__container">
                             <div className="items-list__card">
                                 <div className="items-list__card-info">
                                     <div className="items-list__card-info-ic">
                                         <div className="items-list__card-info-ic--item">
-                                            <h3 className="items-list__card-info-ic--item-label">INVENTORY ITEM</h3>
+                                            <h4 className="items-list__card-info-ic--item-label">INVENTORY ITEM</h4>
                                             <Link key={item.id} to={`/inventories/${item.id}`} className="items-list__card-info-ic--item-ic">
                                                 <p className="items-list__card-info-ic--item-ic-name">{item.item_name}</p>
                                                 <img className="items-list__card-info-ic--item-ic-chevron" alt="chevron-right" src={chvrnRight} />
                                             </Link>
                                         </div>
                                         <div className="items-list__card-info-ic--category">
-                                            <h3 className="items-list__card-info-ic--category-label">CATEGORY</h3>
+                                            <h4 className="items-list__card-info-ic--category-label">CATEGORY</h4>
                                             <p className='items-list__card-info-ic--category-txt'>{item.category}</p>
                                         </div>
                                     </div>
                                     <div className="items-list__card-info-sq">
                                         <div className="items-list__card-info-sq--status">
-                                            <h3 className={`items-list__card-info-sq--status-label`}>STATUS</h3>
+                                            <h4 className={`items-list__card-info-sq--status-label`}>STATUS</h4>
                                             <div className={`items-list__card-info-sq--status-container--${item.status === "In Stock" ? 'in-stock' : 'out-of-stock'}`}>
-                                                <p className={`items-list__card-info-sq--status-txt--${item.status === "In Stock" ? 'in-stock' : 'out-of-stock'}`}>{item.status}</p>
+                                                <p className={`items-list__card-info-sq--status-txt--${item.status === "In Stock" ? 'in-stock' : 'out-of-stock'}`}>{item.status.toUpperCase()}</p>
                                             </div>
                                         </div>
                                         <div className="items-list__card-info-sq--quantity">
-                                            <h3 className="items-list__card-info-sq--quantity-label">QTY</h3>
+                                            <h4 className="items-list__card-info-sq--quantity-label">QTY</h4>
                                             <div className="items-list__card-info-sq--quantity">
                                                 <p className="items-list__card-info-sq--quantity-txt">{item.quantity}</p>
                                             </div>
                                         </div>
                                         <div className="items-list__card-info-sq--warehouse">
-                                            <h3 className="items-list__card-info-sq--warehouse-label">WAREHOUSE</h3>
+                                            <h4 className="items-list__card-info-sq--warehouse-label">WAREHOUSE</h4>
                                             <p className="items-list__card-info-sq--warehouse-label-txt">{item.warehouse_name}</p>
                                         </div>
                                     </div>

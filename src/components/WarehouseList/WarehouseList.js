@@ -86,23 +86,27 @@ function WarehouseList() {
         </header>
         <section className="warehouses-list">
             <div className="warehouses-list__table-header">
-                <div className="warehouses-list__table-header--warehouse">
-                    <h2>WAREHOUSE</h2>
-                    <img alt='sort-icon' src={sortIcon}/>
+                <div className="warehouses-list__table-header-ic">
+                    <div className="warehouses-list__table-header--warehouse">
+                        <h4 className="warehouses-list__table-header--warehouse-txt">WAREHOUSE</h4>
+                        <img alt='sort-icon' src={sortIcon} />
+                    </div>
+                    <div className="warehouses-list__table-header--address">
+                        <h4>ADDRESS</h4>
+                        <img alt='sort-icon' src={sortIcon} />
+                    </div>
                 </div>
-                <div className="warehouses-list__table-header--address">
-                    <h2>ADDRESS</h2>
-                    <img alt='sort-icon' src={sortIcon}/>
+                <div className="warehouses-list__table-header-sqw">
+                    <div className="warehouses-list__table-header--contact-name">
+                        <h4>CONTACT NAME</h4>
+                        <img alt='sort-icon' src={sortIcon} />
+                    </div>
+                    <div className="warehouses-list__table-header--contact-info">
+                        <h4>CONTACT INFORMATION</h4>
+                        <img alt='sort-icon' src={sortIcon} />
+                    </div>
                 </div>
-                <div className="warehouses-list__table-header--contact-name">
-                    <h2>CONTACT NAME</h2>
-                    <img alt='sort-icon' src={sortIcon}/>
-                </div>
-                <div className="warehouses-list__table-header--contact-info">
-                    <h2>CONTACT INFORMATION</h2>
-                    <img alt='sort-icon' src={sortIcon}/>
-                </div>
-                <h2 className="warehouses-list__table-header--actions">ACTIONS</h2>
+                    <h4 className="warehouses-list__table-header--actions">ACTIONS</h4>
             </div>
             {
                 warehouseArr.map((warehouse) => (
@@ -111,24 +115,24 @@ function WarehouseList() {
                                 <div className="warehouses-list__card-info">
                                 <div className="warehouses-list__card-info-wa">
                                     <div className="warehouses-list__card-info-wa--warehouse">
-                                        <h3 className="warehouses-list__card-info-wa--warehouse-label">WAREHOUSE</h3>
+                                        <h4 className="warehouses-list__card-info-wa--warehouse-label">WAREHOUSE</h4>
                                         <Link key={warehouse.id} to={`/warehouses/${warehouse.id}/inventories`} className="warehouses-list__card-info-wa--warehouse-nc">
                                             <p className="warehouses-list__card-info-wa--warehouse-nc-name">{warehouse.warehouse_name}</p>
                                             <img className="warehouses-list__card-info-wa--warehouse-nc-chevron" alt="chevron-right" src={chvrnRight}/>
                                         </Link>
                                     </div>
                                     <div className="warehouses-list__card-info-wa--address">
-                                        <h3 className="warehouses-list__card-info-wa--address-label">ADDRESS</h3>
+                                        <h4 className="warehouses-list__card-info-wa--address-label">ADDRESS</h4>
                                         <p className="warehouses-list__card-info-wa--address-txt">{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
                                     </div>
                                 </div>
                                 <div className="warehouses-list__card-info-cc">
                                     <div className="warehouses-list__card-info-cc--contact-name">
-                                        <h3 className="warehouses-list__card-info-cc--contact-name-label">CONTACT NAME</h3>
+                                        <h4 className="warehouses-list__card-info-cc--contact-name-label">CONTACT NAME</h4>
                                         <p className="warehouses-list__card-info-cc--contact-name-txt">{warehouse.contact_name}</p>
                                     </div>
                                     <div className="warehouses-list__card-info-cc--contact-info">
-                                        <h3 className="warehouses-list__card-info-cc--contact-info-label">CONTACT INFORMATION</h3>
+                                        <h4 className="warehouses-list__card-info-cc--contact-info-label">CONTACT INFORMATION</h4>
                                         <div className="warehouses-list__card-info-cc--contact-info-ph">
                                         <p className="warehouses-list__card-info-cc--contact-info-ph--phone">{warehouse.contact_phone}</p>
                                         <p className="warehouses-list__card-info-cc--contact-info-ph--email">{warehouse.contact_email}</p>

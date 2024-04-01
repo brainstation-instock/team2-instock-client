@@ -103,7 +103,7 @@
             display:none;
             background-color: #F7F8F9;
             padding: 0 1.5rem;
-            height: 5vw;
+            height: 4vh;
         
 
             @include tablet{
@@ -271,7 +271,7 @@
                                 color: #2E66E5;
                                 font-weight: 550;
                                 font-size: 12px;
-                                @include tablet{@include typography-style (0.875rem, 1.375rem, 400)}
+                                @include tablet{@include typography-style (0.875rem, 1.375rem, 550)}
                             }
                         }
                     }
@@ -456,4 +456,12 @@
 
 
     }
+}
+
+.items-list__container:hover{
+    background-color:rgba(46, 102, 229, 0.1)
+}
+
+.items-list__card-info-ic--item-ic-name:hover{
+    text-decoration:underline;
 }

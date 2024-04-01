@@ -11,15 +11,12 @@ import sortIcon from '../../assets/icons/sort-24px.svg'
 import './WarehouseList.scss'
 import DeleteWarehouse from '../DeleteWarehouse/DeleteWarehouse'
 
-
 const baseUrl = process.env.REACT_APP_BASE_URL;
 const warehousesUrl = `${baseUrl}/api/warehouses`;
 
 function WarehouseList() {
 
-
     // Declare variables
-
     const [warehouses, setWarehouses] = useState([]);
     const [modal, setModal] = useState(null);
 
@@ -89,23 +86,23 @@ function WarehouseList() {
         </header>
         <section className="warehouses-list">
             <div className="warehouses-list__table-header">
-                <div div className="warehouses-list__table-header--warehouse">
+                <div className="warehouses-list__table-header--warehouse">
                     <h2>WAREHOUSE</h2>
                     <img alt='sort-icon' src={sortIcon}/>
                 </div>
-                <div div className="warehouses-list__table-header--address">
+                <div className="warehouses-list__table-header--address">
                     <h2>ADDRESS</h2>
                     <img alt='sort-icon' src={sortIcon}/>
                 </div>
-                <div div className="warehouses-list__table-header--contact-name">
+                <div className="warehouses-list__table-header--contact-name">
                     <h2>CONTACT NAME</h2>
                     <img alt='sort-icon' src={sortIcon}/>
                 </div>
-                <div div className="warehouses-list__table-header--contact-info">
+                <div className="warehouses-list__table-header--contact-info">
                     <h2>CONTACT INFORMATION</h2>
                     <img alt='sort-icon' src={sortIcon}/>
                 </div>
-                <h2 div className="warehouses-list__table-header--actions">ACTIONS</h2>
+                <h2 className="warehouses-list__table-header--actions">ACTIONS</h2>
             </div>
             {
                 warehouseArr.map((warehouse) => (
@@ -147,7 +144,7 @@ function WarehouseList() {
                                 </div>
                             </div>
                             {modal === warehouse.id && 
-                            <DeleteWarehouse toggleModal={closeModal} warehouse={warehouse} refreshWarehouses={refreshWarehouses} />}
+                            <DeleteWarehouse toggleModal={toggleModal} warehouse={warehouse} refreshWarehouses={refreshWarehouses} />}
                         </article>
                 ))
                     }

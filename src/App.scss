@@ -41,3 +41,10 @@ button, input, textarea, .button {
         height: 2.375rem;
     }
 }
+
+select{
+    appearance: none;
+    background-image: url('./assets/icons/arrow_drop_down-24px.svg');
+    background-position: right .7em top 50%, 0 0;
+    background-repeat: no-repeat;
+}

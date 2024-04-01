@@ -77,20 +77,25 @@ function EditInventoryItem() {
                         <div className="details__edit-form">
                             <div className="details__edit-form-item-details">
                                 <h2 className="details__edit-form-heading">Item Details</h2>
+                                <div>
+                                    <h3 className="details__edit-form-label">Item Name</h3>
+                                    <label htmlFor='item_name'>
+                                        <input className='details__edit-form-input' type='text' id='item_name' placeholder="Item Name" defaultValue={item.item_name}/>
+                                    </label>
+                                </div>
 
-                                <label className="details__edit-form-label" htmlFor='item_name'> Item Name
-                                    <input className='details__edit-form-input' type='text' id='item_name' placeholder="Item Name" defaultValue={item.item_name}/>
-                                </label>
-
+                                <div>
+                                    <h3 className="details__edit-form-label">Description</h3>
+                                    <label htmlFor='description'>
+                                        <div className="textarea-container">
+                                            <textarea className='details__edit-form-input--textarea' type='textarea' id='description' placeholder="Please enter a brief item description..." defaultValue={item.description}/>
+                                        </div>
+                                    </label>
+                                </div>
                                 
-                                <label className="details__edit-form-label" htmlFor='description'> Description
-                                    <div className="textarea-container">
-                                        <textarea className='details__edit-form-input--textarea' type='textarea' id='description' placeholder="Please enter a brief item description..." defaultValue={item.description}/>
-                                    </div>
-                                </label>
-                                
-
-                                <label className="details__edit-form-label" htmlFor='category'> Category
+                                <div>
+                                    <h3 className="details__edit-form-label">Category</h3>
+                                    <label htmlFor='category'>
                                     <select className='details__edit-form-input--dropdown' id='category' defaultValue={item.category}>
                                         <option value="" disabled>Please select</option>
                                         <option value="Accessories">Accessories</option>
@@ -100,6 +105,7 @@ function EditInventoryItem() {
                                         <option value="Health">Health</option>
                                     </select>
                                 </label>
+                                </div>
                             </div>
                             <div className="details__edit-form-stock">
                                 <h2 className="details__edit-form-heading">Item Availability</h2>
@@ -115,22 +121,28 @@ function EditInventoryItem() {
                                     </label>
                                 </div>
                                 { isInStock && 
-                                    <label className={`details__edit-form-label`} htmlFor='quantity'> Quantity
-                                    <input className='details__edit-form-input--qty' id='quantity' type="text" defaultValue={isInStock ? item.quantity : '0'}/>
-                                    </label>}
-
-                                <label className="details__edit-form-label" htmlFor='warehouse_id'>
-                                    <select className='details__edit-form-input--dropdown' id='warehouse_id' defaultValue={item.warehouse_id}>
-                                        <option value="" disabled>Please select</option>
-                                        <option value="1">Manhattan</option>
-                                        <option value="2">Washington</option>
-                                        <option value="3">Jersey</option>
-                                        <option value="4">San Francisco</option>
-                                        <option value="5">Santa Monica</option>
-                                        <option value="6">Seattle</option>
-                                        <option value="7">Miami</option>
-                                    </select>
-                                </label>
+                                    <div>
+                                        <h3 className="details__edit-form-label">Quantity</h3>
+                                        <label htmlFor='quantity'>
+                                        <input className='details__edit-form-input--qty' id='quantity' type="text" defaultValue={isInStock ? item.quantity : '0'}/>
+                                        </label>
+                                    </div>}
+                                
+                                    <div>
+                                        <h3 className="details__edit-form-label">Warehouse</h3>
+                                        <label htmlFor='warehouse_id'>
+                                            <select className='details__edit-form-input--dropdown' id='warehouse_id' defaultValue={item.warehouse_id}>
+                                                <option value="" disabled>Please select</option>
+                                                <option value="1">Manhattan</option>
+                                                <option value="2">Washington</option>
+                                                <option value="3">Jersey</option>
+                                                <option value="4">San Francisco</option>
+                                                <option value="5">Santa Monica</option>
+                                                <option value="6">Seattle</option>
+                                                <option value="7">Miami</option>
+                                            </select>
+                                        </label>
+                                    </div>
                             </div>
                         </div>
                         <div className="details__edit-form-btns">

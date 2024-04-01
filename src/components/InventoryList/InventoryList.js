@@ -144,7 +144,7 @@ function InventoryList() {
                                 </div>
                                 <div className="items-list__card-info-de">
                                     <img className="items-list__card-info-de-delete" alt="delete-icon" src={deleteIcon} onClick={() => toggleModal(item.id)} />
-                                    <Link to={`/items/${item.id}/edit`}>
+                                    <Link to={`/inventories/${item.id}/edit`}>
                                         <img className="items-list__card-info-de-edit" alt="edit-icon" src={editIcon} />
                                     </Link>
                                 </div>

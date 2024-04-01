@@ -58,8 +58,8 @@
             display:flex;
             flex-direction: row;
             @include typography-style (0.8125rem, 1.25rem, 600);
-            color: $primary1
-
+            color: $primary1;
+            padding-top: 8px;
     
         }
 
@@ -73,6 +73,7 @@
                 flex-direction:row;
                 align-items: center;
                 width: 30vw;
+                height: 4vh;
             }
 
             &--out-of-stock{
@@ -80,6 +81,7 @@
                 flex-direction:row;
                 align-items: center;
                 width: 30vw;
+                height: 4vh;
             }
         }
     }
@@ -168,6 +170,7 @@
 
     &-input {
         margin-bottom: 0.5rem;
+        width:100%;
 
         &::placeholder {
             color: $secondary1;
@@ -175,7 +178,9 @@
         
         &--dropdown{
             border-radius: 1.25rem;
-            padding: 5px;
+            padding: .3125rem;
+            padding-left: .9375rem;
+            width: 100%;
         }
 
         &--radio{
@@ -216,10 +221,11 @@
 
     &-label {
         @include typography-style (0.8125rem, 1.25rem, 600);
-        padding-bottom: 0.25rem;
+        padding-bottom: .25rem;
         margin-top: 0.5rem;
         display:flex;
         flex-direction: column;
+        color: $primary1;
 
         &--in-stock{
             @include typography-style (0.8125rem, 1.25rem, 600);
@@ -281,4 +287,8 @@
 
 input:focus{
     outline: 2px solid #2E66E5;
+}
+
+.edit-item__back-button{
+    cursor: pointer;
 }

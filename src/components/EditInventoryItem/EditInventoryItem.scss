@@ -46,6 +46,7 @@
         justify-content: space-between;
         width: 90vw;
         padding: 1rem 0;
+        margin: 1rem 0;
     }
     @include desktop {
         padding: 0 2.5rem;
@@ -212,10 +213,11 @@
         @include tablet {
             border: none;
             width: 40vw;
+            
         }
 
         @include desktop {
-
+            padding: 1rem 3.7rem;
         }
     }
 
@@ -239,7 +241,16 @@
 
 
     &-item-details {
+        
         @include display (column, space-between, nowrap);
+
+        @include tablet{
+            padding-left: 2rem;
+        }
+
+        @include desktop{
+            padding-left: 0;
+        }
     }
 
     &-btns {

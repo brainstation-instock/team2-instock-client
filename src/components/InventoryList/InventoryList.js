@@ -107,6 +107,7 @@ function InventoryList() {
                 </div>
                 {
                     itemsArr.map((item) => (
+
                         <article key={item.id} className="items-list__container">
                             <div className="items-list__card">
                                 <div className="items-list__card-info">
@@ -127,7 +128,7 @@ function InventoryList() {
                                         <div className="items-list__card-info-sq--status">
                                             <h3 className={`items-list__card-info-sq--status-label`}>STATUS</h3>
                                             <div className={`items-list__card-info-sq--status-container--${item.status === "In Stock" ? 'in-stock' : 'out-of-stock'}`}>
-                                                <p className={`items-list__card-info-sq--status-txt--${item.status === "In Stock" ? 'in-stock' : 'out-of-stock'}`}>{item.status}</p>
+                                                <p className={`items-list__card-info-sq--status-txt--${item.status === "In Stock" ? 'in-stock' : 'out-of-stock'}`}>{item.status.toUpperCase()}</p>
                                             </div>
                                         </div>
                                         <div className="items-list__card-info-sq--quantity">

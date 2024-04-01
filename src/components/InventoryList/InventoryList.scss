@@ -304,6 +304,15 @@
                             align-content: center;
                             border-radius: 1.25rem;
                             padding: 2px 4px;
+                            width: 18vw;
+
+                            @include tablet{
+                                width: 10vw;
+                            }
+
+                            @include desktop{
+                                width: 6vw;
+                            }
                         }
 
                         &-container--out-of-stock{
@@ -311,6 +320,14 @@
                             align-content: center;
                             border-radius: 1.25rem;
                             padding: 2px 4px;
+
+                            @include tablet{
+                                width: 13vw;
+                            }
+
+                            @include desktop{
+                                width: 9vw;
+                            }
                         }
 
                         &-txt--in-stock{

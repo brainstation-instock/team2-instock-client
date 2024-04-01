@@ -133,6 +133,7 @@
         width: 100%;
         @include tablet {
             text-align: right;
+            width: auto;
         }
     }
 

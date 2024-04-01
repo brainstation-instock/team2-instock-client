@@ -112,46 +112,67 @@
 
             @include desktop{
                 padding: 0 2rem;
+                height: 4vh;
+            }
+
+            &-ic{
+                width: 38.4vw;
+                display:flex;
+                flex-direction:row;
+                justify-content: space-between;
+
+                @include desktop{
+                    width: 37.3vw;
+                }
+
+            }
+
+            &-sqw{
+                width: 40vw;
+                display:flex;
+                flex-direction:row;
+                justify-content: space-between;
+
+                @include desktop{
+                    width: 37.4vw;
+                }
             }
 
             &--warehouse{
                 @include tablet{
                     display:flex;
                     align-items: center;
-                    padding-right: 9vw;
                 }
             }
             &--address{
                 @include tablet{
                     display:flex;
                     align-items: center;
-                    padding-right: 8vw;
+                    width: 17.5vw;
                 }
 
                 @include desktop{
-                    padding-right: 11.8vw;
+                    width: 21.7vw;
                 }
             }
             &--contact-name{
                 @include tablet{
                     display:flex;
                     align-items: center;
-                    padding-right: 2vw;
                 }
 
                 @include desktop{
-                    padding-right: 9vw;
                 }
             }
             &--contact-info{
                 @include tablet{
                     display:flex;
                     align-items: center;
-                    padding-right: 4vw;
+                    width: 23.4vw;
                 }
 
                 @include desktop{
-                    padding-right: 8.5vw;
+                    width: 20.4vw;
                 }
             }
         }
@@ -200,11 +221,19 @@
                     }
 
                     @include desktop{
-                        width: 34vw;
+                        width: 36vw;
                     }
 
                     &--warehouse{
                         padding-bottom: .625rem;
+
+                        &-label{
+                            font-weight: 550;
+                            color: $secondary1;
+                            @include tablet{
+                                display:none;
+                            }
+                        }
                     
                         &-nc{
                         display:flex;
@@ -214,6 +243,10 @@
                             &-name{
                                 color: #2E66E5;
                                 font-weight: 550;
+
+                                @include tablet{
+                                    @include typography-style (0.875rem, 1.375rem, 550)
+                                }
                             }
                         }
                     }
@@ -224,9 +257,31 @@
                             width: 18vw;
                         }
 
+                        @include desktop{
+                            width: 22vw;
+                        }
+
+                        &-label{
+
+                            font-weight: 550;
+                            color: $secondary1;
+
+                            @include tablet{
+                                display:none;
+                            }
+                        }
+                    
+
                         &-txt{
+                            font-size: 11px;
+
                             @include tablet{
                                 width: 12.978vw;
+                                @include typography-style (0.875rem, 1.375rem, 400)
+                            }
+
+                            @include desktop{
+                                width: 18vw;
                             }
                         }
                     }
@@ -243,6 +298,10 @@
                         align-items:center;
                     }
 
+                    @include desktop{
+                        width: 35vw;
+                    }
+
                     &--contact-name{
                         padding-bottom: 1.0625rem;
 
@@ -250,12 +309,52 @@
                             padding: 0;
                             width: 15vw;
                         }
+
+
+                        &-label{
+
+                            font-weight: 550;
+                            color: $secondary1;
+
+                            @include tablet{
+                                display:none;
+                            }
+                        }
+
+                        &-txt{
+                            font-size: 12px;
+                            @include tablet{@include typography-style (0.875rem, 1.375rem, 400)}
+                            
+                        }
+                    
                     }
 
                     &--contact-info{
                         @include tablet{
                             width: 20vw;
                         }
+
+                        &-label{
+
+                            font-weight: 550;
+                            color: $secondary1;
+
+                            @include tablet{
+                                display:none;
+                            }
+                        }
+
+                        &-ph--phone{
+                            font-size: 11px;
+                            @include desktop{@include typography-style (0.875rem, 1.375rem, 400)}
+                            
+                        }
+
+                        &-ph--email{
+                            font-size:11px;
+                            @include desktop{@include typography-style (0.875rem, 1.375rem, 400)}
+                        }
+                    
                     }
                 }
             }

@@ -115,21 +115,40 @@
                 padding: 0 2rem;
             }
 
+            &-ic{
+                width: 33.4vw;
+                display:flex;
+                flex-direction:row;
+                justify-content: space-between;
+
+                @include desktop{
+                    width: 30.3vw;
+                }
+
+            }
+
+            &-sqw{
+                width: 45vw;
+                display:flex;
+                flex-direction:row;
+                justify-content: space-between;
+
+                @include desktop{
+                    width: 37.4vw;
+                }
+            }
+
             &--item{
                 @include tablet{
                     display:flex;
                     align-items: center;
-                    padding-right: .5vw;
-                    width: 18.4vw;
+                    width: 15vw;
                 }
 
-                @include desktop{
-                    padding-right: 8vw;
-                }
 
                 &-txt{
                     @include tablet{
-                        width: 12vw
+                        width: 13vw
                     }
 
                     @include desktop{width: 7.3vw;}
@@ -140,44 +159,38 @@
                 @include tablet{
                     display:flex;
                     align-items: center;
-                    padding-right: 5vw;
+                    width: 14.9vw;
                 }
 
                 @include desktop{
-                    padding-right: 7vw;
+                    width: 13.5vw;
                 }
             }
             &--status{
                 @include tablet{
                     display:flex;
                     align-items: center;
-                    padding-right: 7.8vw;
+                    
                 }
 
-                @include desktop{
-                    padding-right: 6.6vw;
-                }
             }
             &--qty{
                 @include tablet{
                     display:flex;
                     align-items: center;
-                    padding-right: 3.9vw;
+                    width: 1vw;
                 }
 
-                @include desktop{
-                    padding-right: 4.5vw;
-                }
             }
             &--warehouse{
                 @include tablet{
                     display:flex;
                     align-items: center;
-                    padding-right: 6vw;
+                    width: 18.5vw;
                 }
 
                 @include desktop{
-                    padding-right: 12.5vw;
+                    width: 17.7vw;
                 }
             }
         }
@@ -240,6 +253,13 @@
                         @include tablet{
                             padding: 0;
                         }
+
+                        &-label {
+                            font-weight:550;
+                            @include tablet{
+                                display:none;
+                            }
+                        }
                     
                         &-ic{
                         display:flex;
@@ -249,6 +269,8 @@
                             &-name{
                                 color: #2E66E5;
                                 font-weight: 550;
+                                font-size: 12px;
+                                @include tablet{@include typography-style (0.875rem, 1.375rem, 400)}
                             }
                         }
                     }
@@ -263,9 +285,17 @@
                             width: 13vw;
                         }
 
+                        &-label {
+                            font-weight:550;
+                            @include tablet{
+                                display:none;
+                            }
+                        }
                         &-txt{
+                            font-size: 11px;
                             @include tablet{
                                 width: 12.978vw;
+                                @include typography-style (0.875rem, 1.375rem, 400)
                             }
                         }
                     }
@@ -299,6 +329,13 @@
                             width: 7vw;
                         }
 
+                        &-label {
+                            font-weight:550;
+                            @include tablet{
+                                display:none;
+                            }
+                        }
+
                         &-container--in-stock{
                             background-color: rgba(21, 132, 99, .07);
                             align-content: center;
@@ -307,11 +344,11 @@
                             width: 18vw;
 
                             @include tablet{
-                                width: 10vw;
+                                width: 8vw;
                             }
 
                             @include desktop{
-                                width: 6vw;
+                                width: 5vw;
                             }
                         }
 
@@ -322,11 +359,11 @@
                             padding: 2px 4px;
 
                             @include tablet{
-                                width: 13vw;
+                                width: 11vw;
                             }
 
                             @include desktop{
-                                width: 9vw;
+                                width: 7vw;
                             }
                         }
 
@@ -334,12 +371,14 @@
                             color: rgb(21,132,99);
                             font-weight:550;
                             text-align: center;
+                            font-size: 11px;
                         }
 
                         &-txt--out-of-stock{
                             color: rgb(201,69,21);
                             font-weight:550;
                             text-align: center;
+                            font-size: 11px;
                         }
                     }
 
@@ -352,6 +391,21 @@
                         @include desktop{
                             width: 3vw;
                         }
+
+                        &-label {
+                            font-weight:550;
+                            @include tablet{
+                                display:none;
+                            }
+                        }
+
+                        &-txt{
+                            font-size: 11px;
+                            @include tablet{
+                                width: 12.978vw;
+                                @include typography-style (0.875rem, 1.375rem, 400)
+                            }
+                        }
                     }
 
 
@@ -361,6 +415,21 @@
                         @include tablet{
                             padding: 0;
                             width: 10vw;
+                        }
+
+                        &-label {
+                            font-weight:550;
+                            @include tablet{
+                                display:none;
+                            }
+                        
+                        &-txt {
+                            font-size: 11px;
+                            @include tablet{
+                                width: 12.978vw;
+                                @include typography-style (0.875rem, 1.375rem, 400)
+                            }
+                        }
                         }
                     }
                 }
@@ -386,32 +455,4 @@
 
 
     }
-}
-
-a {
-    text-decoration: none;
-}
-
-p {
-    font-size: .75rem;
-
-    @include tablet{
-        font-size: .875rem;
-    }
-}
-
-h3 {
-    font-size: .625rem;
-    line-height: 1.125rem;
-    color: #5C667E;
-
-    @include tablet {
-        display:none;
-    }
-}
-
-h2 {
-    font-size: .75rem;
-    line-height: 1.125rem;
-    color: #5C667E;
 }

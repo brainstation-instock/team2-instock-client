@@ -59,6 +59,7 @@
             flex-direction: row;
             @include typography-style (0.8125rem, 1.25rem, 600);
             color: $primary1;
+            padding-top: 8px;
     
         }
 
@@ -72,6 +73,7 @@
                 flex-direction:row;
                 align-items: center;
                 width: 30vw;
+                height: 4vh;
             }
 
             &--out-of-stock{
@@ -79,6 +81,7 @@
                 flex-direction:row;
                 align-items: center;
                 width: 30vw;
+                height: 4vh;
             }
         }
     }
@@ -222,6 +225,7 @@
         margin-top: 0.5rem;
         display:flex;
         flex-direction: column;
+        color: $primary1;
 
         &--in-stock{
             @include typography-style (0.8125rem, 1.25rem, 600);

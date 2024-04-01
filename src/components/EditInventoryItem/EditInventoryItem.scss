@@ -58,21 +58,22 @@
             display:flex;
             flex-direction: row;
             @include typography-style (0.8125rem, 1.25rem, 600);
-            color: $primary1
-
-    
+            color: $primary1;
+            padding-top: .5rem;
         }
 
         &-inputs{
             display:flex;
             flex-direction: row;
             justify-content: space-between;
+            
 
             &--in-stock{
                 display:flex;
                 flex-direction:row;
                 align-items: center;
                 width: 30vw;
+                height: 4vh;
             }
 
             &--out-of-stock{
@@ -80,6 +81,7 @@
                 flex-direction:row;
                 align-items: center;
                 width: 30vw;
+                height: 4vh;
             }
         }
     }
@@ -168,6 +170,7 @@
 
     &-input {
         margin-bottom: 0.5rem;
+        width: 100%;
 
         &::placeholder {
             color: $secondary1;
@@ -175,7 +178,9 @@
         
         &--dropdown{
             border-radius: 1.25rem;
-            padding: 5px;
+            padding: .3125rem;
+            width: 100%;
+            padding-left: .9375rem;
         }
 
         &--radio{
@@ -185,7 +190,7 @@
 
         &--textarea{
             border:none;
-            padding-top: 5px;
+            padding-top: .3125rem;
             width: 100%;
             height: 10vh;
 
@@ -220,6 +225,7 @@
         margin-top: 0.5rem;
         display:flex;
         flex-direction: column;
+        color: $primary1;
 
         &--in-stock{
             @include typography-style (0.8125rem, 1.25rem, 600);
@@ -262,7 +268,7 @@
 }
 
 .stock-txt{
-    padding-left: 10px;
+    padding-left: .625rem;
 }
 
 .textarea-container {

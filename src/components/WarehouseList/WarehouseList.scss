@@ -29,7 +29,7 @@
         display:flex;
         flex-direction: row;
         justify-content: space-between;
-        padding-bottom: 1.875rem;
+        padding: 1.5rem 2rem;
     }
 
     @include desktop{
@@ -49,6 +49,7 @@
             @include tablet{
                 display: flex;
                 flex-direction: row;
+                justify-content: flex-end;
                 align-items: center;
                 width: 53vw;
             }
@@ -84,7 +85,7 @@
             padding-top: 1rem;
 
             @include tablet{
-                padding: 0 1.25rem;
+                padding: 0 0 0 1.25rem;
             }
 
             &__btn{
@@ -101,10 +102,8 @@
         &__table-header{
             display:none;
             background-color: #F7F8F9;
-            padding: 0 1.5rem;
-            height: 5vw;
+            padding: 0.5rem 2rem;
         
-
             @include tablet{
                 display:flex;
                 flex-direction: row;
@@ -115,6 +114,7 @@
                 padding: 0 2rem;
                 height: 4vh;
             }
+
 
             &-ic{
                 width: 38.4vw;
@@ -179,7 +179,11 @@
         }
 
         &__container{
-            border-top: 1px #BDC5D5 solid ;
+            border-top: 1px #BDC5D5 solid;
+            
+            &:nth-child(2) {
+                border-top: none;
+            }
         }
 
         &__card{
@@ -190,12 +194,13 @@
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-                padding: 1rem 1.5rem;
+                padding: 1rem 2rem;
             }
 
             @include desktop{
                 padding: 1rem 2rem;
             }
+
 
             &-info{
             display:flex;

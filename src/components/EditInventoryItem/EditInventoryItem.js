@@ -150,7 +150,7 @@ function EditInventoryItem() {
                                 <button className='details__edit-form-cancel' onClick={() => navigate('/inventories')}>Cancel</button>
                             </div>
                             <div className="details__edit-form-btns-a">
-                                <button className='details__edit-form-edit' type="submit">Edit Item</button>
+                                <button className='details__edit-form-edit' type="submit">Save</button>
                             </div>
                         </div>
                     </form>

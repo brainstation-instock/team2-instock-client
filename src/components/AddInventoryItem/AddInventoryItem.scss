@@ -46,6 +46,7 @@
         justify-content: space-between;
         width: 90vw;
         padding: 1rem 0;
+        margin: 1rem 0;
     }
     @include desktop {
         padding: 0 2.5rem;
@@ -59,7 +60,7 @@
             flex-direction: row;
             @include typography-style (0.8125rem, 1.25rem, 600);
             color: $primary1;
-            padding-top: 8px;
+            padding-top: .5rem;
     
         }
 
@@ -137,10 +138,12 @@
                 width: 45vw;
                 border-right: 1px solid $secondary2;
                 padding-right: 50px;
+                padding-left: 2rem;
             }
 
             @include desktop{
                 width: 35vw;
+                padding-left:0;
             }
     }
 
@@ -215,7 +218,7 @@
         }
 
         @include desktop {
-
+            padding: 1rem 3.7rem;
         }
     }
 

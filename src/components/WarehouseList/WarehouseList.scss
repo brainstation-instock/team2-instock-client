@@ -23,7 +23,7 @@
 
     &-header {
     
-    padding: 1.25rem;
+    padding: 1rem;
 
     @include tablet{
         display:flex;
@@ -384,4 +384,19 @@
 
 a {
     text-decoration: none;
+}
+
+.warehouses-list__container:hover{
+    background-color: rgba(46, 102, 229, 0.1);
+}
+
+.warehouses-list__card-info-wa--warehouse-nc-name:hover{
+    text-decoration: underline;
+}
+.warehouses-header__search-bar--input:focus{
+    outline:none;
+}
+
+.warehouses-header__search-bar__container:focus-within{
+    border: 2px $primary2 solid;
 }

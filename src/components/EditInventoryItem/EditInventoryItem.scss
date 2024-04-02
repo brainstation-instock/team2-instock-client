@@ -276,6 +276,9 @@
 #in, #out {
     width: 10px;
     
+    &:checked {
+        outline: none;
+    }
 }
 
 .stock-txt{

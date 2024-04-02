@@ -29,11 +29,11 @@
         display:flex;
         flex-direction: row;
         justify-content: space-between;
-        padding-bottom: 1.875rem;
+        padding: 1.5rem 2rem;
     }
 
     @include desktop{
-        padding: 1.875rem 2rem;
+        padding: 1.5rem 2.5rem;
     }
 
         &__title {
@@ -49,6 +49,7 @@
             @include tablet{
                 display: flex;
                 flex-direction: row;
+                justify-content: flex-end;
                 align-items: center;
                 width: 53vw;
             }
@@ -84,7 +85,7 @@
             padding-top: 1rem;
 
             @include tablet{
-                padding: 0 1.25rem;
+                padding: 0 0 0 1.25rem;
             }
 
             &__btn{
@@ -101,10 +102,8 @@
         &__table-header{
             display:none;
             background-color: #F7F8F9;
-            padding: 0 1.5rem;
-            height: 5vw;
+            padding: 0.5rem 2rem;
         
-
             @include tablet{
                 display:flex;
                 flex-direction: row;
@@ -112,9 +111,9 @@
             }
 
             @include desktop{
-                padding: 0 2rem;
-                height: 4vh;
+                padding: 0.5rem 2.5rem;
             }
+
 
             &-ic{
                 width: 38.4vw;
@@ -179,7 +178,13 @@
         }
 
         &__container{
-            border-top: 1px #BDC5D5 solid ;
+            border-top: 1px #BDC5D5 solid;
+
+            &:nth-child(2) {
+                @include tablet {
+                    border-top: none;
+                }
+            }
         }
 
         &__card{
@@ -190,12 +195,13 @@
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-                padding: 1rem 1.5rem;
+                padding: 1rem 2rem;
             }
 
             @include desktop{
-                padding: 1rem 2rem;
+                padding: 1rem 2.5rem;
             }
+
 
             &-info{
             display:flex;
@@ -222,11 +228,13 @@
                     }
 
                     @include desktop{
-                        width: 36vw;
+                        width: 35vw;
                     }
 
                     &--warehouse{
-                        padding-bottom: .625rem;
+                        @include mobile {
+                          padding-bottom: .625rem;  
+                        }
 
                         &-label{
                             font-weight: 550;
@@ -244,10 +252,6 @@
                             &-name{
                                 color: #2E66E5;
                                 font-weight: 550;
-
-                                @include tablet{
-                                    @include typography-style (0.875rem, 1.375rem, 550)
-                                }
                             }
                         }
                     }
@@ -300,7 +304,8 @@
                     }
 
                     @include desktop{
-                        width: 35vw;
+                        width: 33vw;
+                        justify-content: flex-start;
                     }
 
                     &--contact-name{
@@ -334,6 +339,9 @@
                         @include tablet{
                             width: 20vw;
                         }
+                        @include desktop {
+                            width: auto;
+                        }
 
                         &-label{
 
@@ -343,17 +351,6 @@
                             @include tablet{
                                 display:none;
                             }
-                        }
-
-                        &-ph--phone{
-                            font-size: 11px;
-                            @include desktop{@include typography-style (0.875rem, 1.375rem, 400)}
-                            
-                        }
-
-                        &-ph--email{
-                            font-size:11px;
-                            @include desktop{@include typography-style (0.875rem, 1.375rem, 400)}
                         }
                     
                     }
@@ -368,13 +365,20 @@
                     width: 10vw;
                     justify-content: center;
                 }
+                @include desktop {
+                    gap: 1rem;
+                }
 
                 &-delete{
+                    max-height: 1.5rem;
                     cursor: pointer;
                     @include tablet{
                         padding-right: .625rem;
                     }
-                }
+                    @include desktop {
+                        padding-right: 0;
+                    }
+                }               
             }
         }
 

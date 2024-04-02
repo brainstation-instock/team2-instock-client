@@ -35,10 +35,10 @@ function WarehouseList() {
         'desc': true
     }
 
-    console.log(queryParams.get('sort_by'))
-
     const sortBy = possibleSort[queryParams.get('sort_by')] ? queryParams.get('sort_by') : null;
     const orderBy = possibleOrder[queryParams.get('order_by')] ? isAscending.current ? 'asc' : 'desc' : 'asc';
+
+    console.log(orderBy)
 
     if(sortBy && !possibleOrder[queryParams.orderBy]){
         console.log('here')

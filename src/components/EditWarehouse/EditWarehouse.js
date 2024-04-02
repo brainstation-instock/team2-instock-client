@@ -1,6 +1,6 @@
 import './EditWarehouse.scss';
 import Header from '../Header/Header';
-import backIcon from '../../assets/icons/arrow_back-24px.svg'
+
 
 function EditWarehouse() {
     return (

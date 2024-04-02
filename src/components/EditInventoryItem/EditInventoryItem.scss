@@ -137,7 +137,7 @@
             @include tablet{
                 width: 45vw;
                 border-right: 1px solid $secondary2;
-                padding-right: 50px;
+                padding-right: 3.125rem;
             }
 
             @include desktop{
@@ -262,7 +262,7 @@
 
         &-a{
             @include tablet{
-                padding-left: 20px;
+                padding-left: 1.25rem;
             }
         }
 

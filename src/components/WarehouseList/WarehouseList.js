@@ -1,7 +1,7 @@
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import React from 'react' // imported React for toggleModal functionality
-import { NavLink, Link } from 'react-router-dom' // consolidated all react-router-dom calls
+import { NavLink, Link, useSearchParams } from 'react-router-dom' // consolidated all react-router-dom calls
 import axios from 'axios'
 import searchIcon from '../../assets/icons/search-24px.svg'
 import deleteIcon from '../../assets/icons/delete_outline-24px.svg'
@@ -19,8 +19,34 @@ function WarehouseList() {
     // Declare variables
     const [warehouses, setWarehouses] = useState([]);
     const [modal, setModal] = useState(null);
+    const [queryParams, setQueryParam] = useSearchParams();
+    const isAscending = useRef(true);
+    const previousSort = useRef(null);
+
+    const possibleSort = {
+        'warehouse_name': true,
+        'address': true,
+        'contact_name': true,
+        'contact_information': true
+    };
+
+    const possibleOrder = {
+        'asc': true,
+        'desc': true
+    }
+
+    console.log(queryParams.get('sort_by'))
+
+    const sortBy = possibleSort[queryParams.get('sort_by')] ? queryParams.get('sort_by') : null;
+    const orderBy = possibleOrder[queryParams.get('order_by')] ? isAscending.current ? 'asc' : 'desc' : 'asc';
+
+    if(sortBy && !possibleOrder[queryParams.orderBy]){
+        console.log('here')
+        setQueryParam({sort_by: sortBy, order_by: orderBy});
+    }
 
     useEffect(() => {
+
         axios
         .get(warehousesUrl)
         .then((response) => {
@@ -57,6 +83,17 @@ function WarehouseList() {
         })
     }
 
+    const handleSort = (sortBy) => {
+        if(previousSort.current === sortBy){
+            isAscending.current = !isAscending.current;
+        }
+        else{
+            isAscending.current = true;
+        }
+        previousSort.current = sortBy;
+        setQueryParam({sort_by: sortBy, order_by: isAscending.current ? 'asc' : 'desc'});
+    }
+
     return (
     <main className="warehouses">
         <header className="warehouses-header">
@@ -87,21 +124,21 @@ function WarehouseList() {
         <section className="warehouses-list">
             <div className="warehouses-list__table-header">
                 <div className="warehouses-list__table-header-ic">
-                    <div className="warehouses-list__table-header--warehouse">
+                    <div className="warehouses-list__table-header--warehouse" onClick={() => handleSort('warehouse_name')}>
                         <h4 className="warehouses-list__table-header--warehouse-txt">WAREHOUSE</h4>
                         <img alt='sort-icon' src={sortIcon} />
                     </div>
-                    <div className="warehouses-list__table-header--address">
+                    <div className="warehouses-list__table-header--address" onClick={() => handleSort('address')}>
                         <h4>ADDRESS</h4>
                         <img alt='sort-icon' src={sortIcon} />
                     </div>
                 </div>
                 <div className="warehouses-list__table-header-sqw">
-                    <div className="warehouses-list__table-header--contact-name">
+                    <div className="warehouses-list__table-header--contact-name" onClick={() => handleSort('contact_name')}>
                         <h4>CONTACT NAME</h4>
                         <img alt='sort-icon' src={sortIcon} />
                     </div>
-                    <div className="warehouses-list__table-header--contact-info">
+                    <div className="warehouses-list__table-header--contact-info"  onClick={() => handleSort('contact_information')}>
                         <h4>CONTACT INFORMATION</h4>
                         <img alt='sort-icon' src={sortIcon} />
                     </div>

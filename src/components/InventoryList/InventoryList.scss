@@ -102,8 +102,7 @@
         &__table-header{
             display:none;
             background-color: #F7F8F9;
-            padding: 0 1.5rem;
-            height: 4vh;
+            padding: 0.5rem 1.5rem;
         
 
             @include tablet{
@@ -198,6 +197,10 @@
 
         &__container{
             border-top: 1px #BDC5D5 solid ;
+            
+            &:nth-child(2) {
+                border-top: none;
+            }
         }
 
         &__card{

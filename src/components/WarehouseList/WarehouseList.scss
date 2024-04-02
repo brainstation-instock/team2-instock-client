@@ -180,7 +180,7 @@
 
         &__container{
             border-top: 1px #BDC5D5 solid;
-            
+
             &:nth-child(2) {
                 border-top: none;
             }
@@ -348,17 +348,6 @@
                             @include tablet{
                                 display:none;
                             }
-                        }
-
-                        &-ph--phone{
-                            font-size: 11px;
-                            @include desktop{@include typography-style (0.875rem, 1.375rem, 400)}
-                            
-                        }
-
-                        &-ph--email{
-                            font-size:11px;
-                            @include desktop{@include typography-style (0.875rem, 1.375rem, 400)}
                         }
                     
                     }

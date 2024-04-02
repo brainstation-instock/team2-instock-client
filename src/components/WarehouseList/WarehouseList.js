@@ -148,7 +148,7 @@ function WarehouseList() {
                                 </div>
                             </div>
                             {modal === warehouse.id && 
-                            <DeleteWarehouse toggleModal={toggleModal} warehouse={warehouse} refreshWarehouses={refreshWarehouses} />}
+                            <DeleteWarehouse toggleModal={closeModal} warehouse={warehouse} refreshWarehouses={refreshWarehouses} />}
                         </article>
                 ))
                     }

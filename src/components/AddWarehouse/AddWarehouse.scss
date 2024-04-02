@@ -44,7 +44,7 @@
 }
 
 .details__form {
-    padding: 1rem 1rem 0.5rem 1rem;
+    padding: 1rem;
     border-bottom: 1px solid $secondary2;
     @include tablet {
         @include padding-tablet;
@@ -109,14 +109,18 @@
     }
 
     &-heading {
-        @include pad-top-bottom (1rem, 1rem);
+        @include pad-top-bottom (0, 1rem);
         @include tablet {
             padding: 0 0 1.5rem 0;
         }
     }
 
     &-input {
+
         margin-bottom: 0.25rem;
+        margin-bottom: 1rem;
+
+
         &::placeholder {
             color: $secondary1;
         }

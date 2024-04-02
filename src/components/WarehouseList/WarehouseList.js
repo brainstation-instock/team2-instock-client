@@ -33,26 +33,32 @@ function WarehouseList() {
     const possibleOrder = {
         'asc': true,
         'desc': true
-    }
+    };
 
     const sortBy = possibleSort[queryParams.get('sort_by')] ? queryParams.get('sort_by') : null;
     const orderBy = possibleOrder[queryParams.get('order_by')] ? isAscending.current ? 'asc' : 'desc' : 'asc';
 
-    console.log(orderBy)
-
-    if(sortBy && !possibleOrder[queryParams.orderBy]){
-        console.log('here')
-        setQueryParam({sort_by: sortBy, order_by: orderBy});
+    if(previousSort.current === null){
+        previousSort.current = sortBy;
     }
 
     useEffect(() => {
 
-        axios
-        .get(warehousesUrl)
-        .then((response) => {
-            setWarehouses(response.data)
-        })
-    }, [])
+        if(sortBy){
+            axios
+            .get(`${baseUrl}/api/warehouses?sort_by=${sortBy}&order_by=${orderBy}`)
+            .then(response => {
+                setWarehouses(response.data);
+            });
+        }
+        else{
+            axios
+            .get(warehousesUrl)
+            .then((response) => {
+                setWarehouses(response.data)
+            });
+        }
+    }, [queryParams]);
 
     const warehouseArr = warehouses.warehouses
 

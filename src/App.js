@@ -6,9 +6,12 @@ import AddInventoryItem from './components/AddInventoryItem/AddInventoryItem';
 import AddWarehouse from './components/AddWarehouse/AddWarehouse';
 import EditInventoryItem from './components/EditInventoryItem/EditInventoryItem';
 import EditWarehouse from './components/EditWarehouse/EditWarehouse';
+import InventoryItem from './components/InventoryItem/InventoryItem';
 import WarehouseInventory from './components/WarehouseInventory/WarehouseInventory';
+
 import NotFound from './pages/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
+
 
 function App() {
   return (
@@ -18,6 +21,7 @@ function App() {
           <Route path='/' element={<Warehouses />} />
           <Route path='/warehouses' element={<Navigate to='/' />} />
           <Route path='/inventories' element={<Inventories />} />
+          <Route path='/inventories/:id' element={<InventoryItem />} />
           <Route path='/inventories/add' element={<AddInventoryItem />} />
           <Route path='/warehouses/add' element={<AddWarehouse />} />
           <Route path='/inventories/:id/edit' element={<EditInventoryItem />} />

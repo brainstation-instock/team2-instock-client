@@ -41,14 +41,6 @@ function EditWarehouse({ id }) {
             return;
         }
 
-        //     // function that updates the form fields
-        // const handleChange = (e) => {
-        //     const { name, value } = e.target;
-        //     setFormData(prevState => ({
-        //         ...prevState,
-        //         [name]: value
-        //     }))
-        // }
 
         axios
             .put(`http://localhost:8080/api/warehouses/${id}`,

@@ -87,29 +87,20 @@ function EditWarehouse({ id }) {
                                <h2 className="details__edit-form-heading">Warehouse Details</h2>
                                     <div className="details__edit-form-label">
                                         <label className="details__edit-form-label" htmlFor='warehouse_id'>Warehouse Name
-                                            <select className='details__edit-form-input--dropdown' id='warehouse_id' defaultValue={id}>
-                                                <option value="" disabled>Please select</option>
-                                                <option value="1">Manhattan</option>
-                                                <option value="2">Washington</option>
-                                                <option value="3">Jersey</option>
-                                                <option value="4">San Francisco</option>
-                                                <option value="5">Santa Monica</option>
-                                                <option value="6">Seattle</option>
-                                                <option value="7">Miami</option>
-                                            </select>
+                                            <input type="text" id='warehouse_id' defaultValue={id} placeholder="Warehouse Name"></input>
                                         </label>
                                     </div>
         
 
-                                 <label className="details__edit-form-label" htmlFor='item_name'> Street Address
+                                 <label className="details__edit-form-label" htmlFor='street_address'> Street Address
                                      <input className='details__edit-form-input' type='text' id='street_address' placeholder="Street Address" defaultValue={warehouse.address} />
                                  </label>
 
-                                 <label className="details__edit-form-label" htmlFor='item_name'> City
+                                 <label className="details__edit-form-label" htmlFor='city'> City
                                      <input className='details__edit-form-input' type='text' id='city' placeholder="City" defaultValue={warehouse.city} />
                                  </label>
 
-                             <label className="details__edit-form-label" htmlFor='item_name'> Country
+                             <label className="details__edit-form-label" htmlFor='country'> Country
                                      <input className='details__edit-form-input' type='text' id='country' placeholder="Country" defaultValue={warehouse.country} />
                                  </label>
 
@@ -117,15 +108,19 @@ function EditWarehouse({ id }) {
                              <div className="details__edit-form-item-details details__edit-form-item-details--bottom">
                                  <h2 className="details__edit-form-heading">Contact Details</h2>
 
-                                 <label className="details__edit-form-label" htmlFor='item_name'> Position
+                                 <label className="details__edit-form-label" htmlFor='contact_name'> Contact Name
+                                     <input className='details__edit-form-input' type='text' id='contact_name' placeholder="Contact Name" defaultValue={warehouse.contact_name} />
+                                 </label>
+
+                                 <label className="details__edit-form-label" htmlFor='position'> Position
                                      <input className='details__edit-form-input' type='text' id='position' placeholder="Position" defaultValue={warehouse.contact_position} />
                                  </label>
 
-                                 <label className="details__edit-form-label" htmlFor='item_name'> Phone Number
+                                 <label className="details__edit-form-label" htmlFor='phone_number'> Phone Number
                                      <input className='details__edit-form-input' type='text' id='phone_number' placeholder="Phone Number" defaultValue={warehouse.contact_phone} />
                                  </label>
 
-                                 <label className="details__edit-form-label" htmlFor='item_name'> Email
+                                 <label className="details__edit-form-label" htmlFor='email'> Email
                                      <input className='details__edit-form-input' type='text' id='email' placeholder="Email" defaultValue={warehouse.email} />
                                  </label>
                                  

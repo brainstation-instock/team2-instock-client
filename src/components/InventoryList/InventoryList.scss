@@ -22,18 +22,17 @@
     }
 
     &-header {
-    
     padding: 1rem;
 
     @include tablet{
         display:flex;
         flex-direction: row;
         justify-content: space-between;
-        padding-bottom: 1.875rem;
+        padding: 1.5rem 2rem;
     }
 
     @include desktop{
-        padding: 1.875rem 2rem;
+        padding: 1.5rem 2.5rem;
     }
 
         &__title {
@@ -52,6 +51,7 @@
                 align-items: center;
                 width: 53vw;
                 justify-content: flex-end;
+                gap: 1rem;
             }
 
             @include desktop{
@@ -109,10 +109,17 @@
                 display:flex;
                 flex-direction: row;
                 align-items: center;
+                padding: 0.5rem 2rem;
             }
 
             @include desktop{
-                padding: 0 2rem;
+                padding: 0.5rem 2.5rem;
+            }
+
+            &--actions {
+                @include desktop {
+                    margin-left: auto;
+                }
             }
 
             &-ic{
@@ -197,9 +204,11 @@
 
         &__container{
             border-top: 1px #BDC5D5 solid ;
-            
+
             &:nth-child(2) {
+                @include tablet {
                 border-top: none;
+                }
             }
         }
 
@@ -211,11 +220,11 @@
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-                padding: 1rem 1.5rem;
+                padding: 1rem 2rem;
             }
 
             @include desktop{
-                padding: 1rem 2rem;
+                padding: 1.5rem 2.5rem;
             }
 
             &-info{
@@ -260,6 +269,7 @@
 
                         &-label {
                             font-weight:550;
+                            color: #5C667E;
                             @include tablet{
                                 display:none;
                             }
@@ -291,6 +301,7 @@
 
                         &-label {
                             font-weight:550;
+                            color: #5C667E;
                             @include tablet{
                                 display:none;
                             }
@@ -335,6 +346,7 @@
 
                         &-label {
                             font-weight:550;
+                            color: #5C667E;
                             @include tablet{
                                 display:none;
                             }
@@ -375,14 +387,13 @@
                             color: rgb(21,132,99);
                             font-weight:550;
                             text-align: center;
-                            font-size: 11px;
                         }
 
                         &-txt--out-of-stock{
                             color: rgb(201,69,21);
                             font-weight:550;
                             text-align: center;
-                            font-size: 11px;
+                            white-space: nowrap;
                         }
                     }
 
@@ -398,6 +409,7 @@
 
                         &-label {
                             font-weight:550;
+                            color: #5C667E;
                             @include tablet{
                                 display:none;
                             }
@@ -423,6 +435,7 @@
 
                         &-label {
                             font-weight:550;
+                            color: #5C667E;
                             @include tablet{
                                 display:none;
                             }
@@ -445,7 +458,11 @@
 
                 @include tablet{
                     width: 10vw;
-                    justify-content: center;
+                    justify-content: flex-end;
+                }
+
+                @include desktop {
+                    gap: 0.5rem;
                 }
 
                 &-delete{
@@ -459,6 +476,10 @@
 
 
     }
+}
+
+.edit__button {
+    max-height: 1.5rem;
 }
 
 .items-list__container:hover{

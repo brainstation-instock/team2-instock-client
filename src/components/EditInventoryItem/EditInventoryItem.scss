@@ -162,8 +162,6 @@
 
     &-heading {
         @include pad-top-bottom (0, 1rem);
-        font-size: 1.25rem;
-        line-height: 1.75rem;
         @include tablet {
             padding: 0 0 1.5rem 0;
         }
@@ -228,6 +226,7 @@
         display:flex;
         flex-direction: column;
         color: $primary1;
+        gap: 0.25rem;
 
         &--in-stock{
             @include typography-style (0.8125rem, 1.25rem, 600);
@@ -241,7 +240,9 @@
 
 
     &-item-details {
-        
+        @include mobile {
+            border-bottom: 1px solid $secondary2;
+        }
         @include display (column, space-between, nowrap);
 
         @include tablet{
@@ -250,6 +251,12 @@
 
         @include desktop{
             padding-left: 0;
+        }
+
+        &--bottom {
+            @include mobile {
+                border-bottom: none;
+            }
         }
     }
 

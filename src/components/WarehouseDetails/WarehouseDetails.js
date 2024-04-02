@@ -9,6 +9,7 @@ const baseUrl = process.env.REACT_APP_BASE_URL;
 function WarehouseDetails({id}){
 
     const [warehouse, setWarehouse] = useState(null);
+    
 
     useEffect(() => {
         (async() => {

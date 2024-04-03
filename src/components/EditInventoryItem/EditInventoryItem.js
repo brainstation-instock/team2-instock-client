@@ -71,7 +71,7 @@ function EditInventoryItem() {
         <>
             <Header isWarehouse={false}/>
             <main className="edit-item">
-                <section className="edit-item-container">
+                <section className="edit-item-container1">
                     <img className="edit-item__back-button" alt="back-icon" src={backIcon} onClick={() => navigate('/inventories')} role="button" />
                     <h1 className="edit-item__heading">Edit Inventory Item</h1>
                 </section>

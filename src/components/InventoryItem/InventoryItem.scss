@@ -118,6 +118,10 @@
         @include tablet {
             left: 25rem;
         }
+
+        @include desktop{
+            left:46rem;
+        }
     }
 
     &-maintitle {

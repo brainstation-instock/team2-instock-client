@@ -282,9 +282,8 @@
 
                             &-name{
                                 color: #2E66E5;
-                                font-weight: 550;
-                                font-size: 12px;
-                                @include tablet{@include typography-style (0.875rem, 1.375rem, 550)}
+                                font-size: 0.875rem;
+                                font-weight: 600;
                             }
                         }
                     }

@@ -6,7 +6,7 @@ function Warehouses() {
 
     return (
         <>
-        <Header  isWarehouse={true}/>
+        <Header isWarehouse={true}/>
         <WarehouseList/>
         </>
     )

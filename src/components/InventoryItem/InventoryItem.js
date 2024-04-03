@@ -22,39 +22,7 @@ function InventoryItem() {
             .then((response) => {
                 setItem(response.data)
             })
-  
-
-    // useEffect(() => {
-    //     axios
-    //         .get(inventoriesUrl)
-    //         .then((response) => {
-    //             setItem(response.data)
-    //         });
-
-        // axios
-        // .get(`http://localhost:8080/api/warehouses/${id}`)
-        // .then((response) => {
-        //     setItem(response.data)
-        // });
     }, [])
-
-    // const getWarehouses = () => {
-    //     axios.get(warehousesUrl).then((response) => {
-    //         setItem(response.data);
-    //     })
-    //         .catch((error) => {
-    //             console.error(error);
-    //         })
-    // }
-
-
-    // useEffect(() => {
-    //     axios
-    //         .get(`http://localhost:8080/api/warehouses/${id}`)
-    //         .then((response) => {
-    //             setItem(response.data)
-    //         })
-    // }, [])
 
     if (!item) {
         return (

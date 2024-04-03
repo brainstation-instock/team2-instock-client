@@ -42,10 +42,13 @@ function EditInventoryItem() {
               return;
            }
 
-         if(!isNumber(formRef.current.quantity.value)){
-            alert("Quantity must be a valid number!");
-            return;
+         if(`${formRef.current.status.value}` === "In Stock"){
+            if(!isNumber(formRef.current.quantity.value)){
+                alert("Quantity must be a valid number!");
+                return;
+            }
          }
+         
 
         axios
         .put(`http://localhost:8080/api/inventories/${id}`, 
@@ -120,13 +123,13 @@ function EditInventoryItem() {
                                         </div>
                                     </label>
                                 </div>
-                                { isInStock && 
-                                    <div>
+            
+                                    <div className={`quantity-${isInStock ? 'in-stock' : 'out-of-stock'}`}>
                                         <h3 className="details__edit-form-label">Quantity</h3>
                                         <label htmlFor='quantity'>
                                         <input className='details__edit-form-input--qty' id='quantity' type="text" defaultValue={isInStock ? item.quantity : '0'}/>
                                         </label>
-                                    </div>}
+                                    </div>
                                 
                                     <div>
                                         <h3 className="details__edit-form-label">Warehouse</h3>

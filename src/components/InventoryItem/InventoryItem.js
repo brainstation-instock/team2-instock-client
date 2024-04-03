@@ -114,7 +114,7 @@ function InventoryItem() {
 
                     <div className='edit-item-whatwarehouse'> 
                         <p> Warehouse </p>
-                        {/* <p getWarehouses={getWarehouses}> {item.warehouse_name}</p> */}
+                        <p> {item.warehouse_name}</p>
                     </div>
                     </div>
 

@@ -50,41 +50,7 @@ function EditWarehouse() {
 
     // Function to post new data and return to the warehouse list
     const handleAdd = async () => {
-
-        if(!formData.warehouse_name){
-            errorRef.current.warehouse_name = 'This field is required';
-        }
-
-        if(!formData.address){
-            errorRef.current.address = 'This field is required';
-        }
-
-        if(!formData.city){
-            errorRef.current.city = 'This field is required';
-        }
-
-        axios
-            .put(`http://localhost:8080/api/warehouses/${id}`,
-                {
-                    warehouse_name: formRef.current.warehouse_name.value,
-                    address: formRef.current.address.value,
-                    city: formRef.current.city.value,
-                    status: formRef.current.country.value,
-                    contact_position: formRef.current.contact_position.value,
-                    contact_phone: formRef.current.contact_phone.value,
-                    contact_email: formRef.current.contact_email.value,
-                    warehouse_id: formRef.current.warehouse_id.value
-
-                })
-
-        alert("Warehouse successfully edited!")
-
-        navigate('/warehouses');
-    }
-
-
-    return (
-        
+     
         if(!formData.country){
             errorRef.current.country = 'This field is required';
         }

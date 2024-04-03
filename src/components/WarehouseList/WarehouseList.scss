@@ -222,7 +222,7 @@
 
                     @include tablet{
                         flex-direction:row;
-                        width: 40vw;
+                        width: 39vw;
                         justify-content: space-between;
                         align-items:center;
                     }
@@ -251,7 +251,8 @@
 
                             &-name{
                                 color: #2E66E5;
-                                font-weight: 550;
+                                font-size: 0.875rem;
+                                font-weight: 600;
                             }
                         }
                     }

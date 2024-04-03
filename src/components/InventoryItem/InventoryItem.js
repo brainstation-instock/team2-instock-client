@@ -71,7 +71,7 @@ function InventoryItem() {
         <>
             <Header isWarehouse={false} />
             <main className='edit-item'>
-            <article className='edit-item-container'>
+            <article className='edit-item-container1'>
                 <section className='edit-item-header'>
                 <div className='edit-item-titlearr'> 
                     <h1 className='edit-item-maintitle'>{item.item_name} </h1>
@@ -114,7 +114,7 @@ function InventoryItem() {
 
                     <div className='edit-item-whatwarehouse'> 
                         <p> Warehouse </p>
-                        {/* <p getWarehouses={getWarehouses}> {item.warehouse_name}</p> */}
+                        <p> {item.warehouse_name}</p>
                     </div>
                     </div>
 

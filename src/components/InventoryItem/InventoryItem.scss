@@ -23,7 +23,7 @@
     }
 
 
-    &-container {
+    &-container1 {
         border-bottom: 1px solid $secondary2;
         padding: 1.5rem 1rem;
         @include display (column, flex-start, nowrap);

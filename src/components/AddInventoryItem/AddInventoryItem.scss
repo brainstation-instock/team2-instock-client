@@ -123,13 +123,12 @@
 
     &-item-details {
             @include display (column, space-between, nowrap);
-            padding: 1rem 1rem 1rem 1rem;
+            padding: 1rem;
 
             @include tablet{
                 width: 45vw;
                 border-right: 1px solid $secondary2;
-                padding-right: 3.125rem;
-                padding-left: 2rem;
+                padding: 0 2rem;
             }
 
             @include desktop{
@@ -199,11 +198,12 @@
 
     &-stock{
         border-top: 1px solid $secondary2;
-        padding: 1rem 1rem 1rem 1rem;
+        padding: 1rem;
 
         @include tablet {
             border: none;
             width: 50%;
+            padding: 0 2rem;
         }
 
         @include desktop {

@@ -84,9 +84,6 @@ function AddWarehouse() {
         if(!errorRef.current.warehouse_name && !errorRef.current.address && !errorRef.current.city && !errorRef.current.contact_name && !errorRef.current.contact_position && !errorRef.current.contact_phone && !errorRef.current.contact_email){
             isFormValid.current = true;
         }
-
-        console.log(errorRef.current);
-
         try {
             if(isFormValid.current){
                 const response = await axios.post(`${baseUrl}/api/warehouses/`, formData);

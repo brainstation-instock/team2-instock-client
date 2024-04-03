@@ -7,17 +7,20 @@ import backIcon from '../../assets/icons/arrow_back-24px.svg'
 // const baseUrl = process.env.REACT_APP_BASE_URL;
 import { Link } from 'react-router-dom';
 
-function EditWarehouse({ id }) {
+function EditWarehouse() {
     const formRef = useRef()
     const navigate = useNavigate()
+
+    const {id} = useParams();
 
     const [warehouse, setWarehouse] = useState(null);
 
     useEffect(() => {
-        (async () => {
-            const { data } = await axios.get(`http://localhost:8080/api/warehouses/`);
-            setWarehouse(data);
-        })();
+        axios
+        .get(`http://localhost:8080/api/warehouses/${id}`)
+        .then((response) => {
+            setWarehouse(response.data)
+        } )
     }, []);
 
     if (!warehouse) {
@@ -87,7 +90,7 @@ function EditWarehouse({ id }) {
                                <h2 className="details__edit-form-heading">Warehouse Details</h2>
                                     <div className="details__edit-form-label">
                                         <label className="details__edit-form-label" htmlFor='warehouse_id'>Warehouse Name
-                                            <input type="text" id='warehouse_id' defaultValue={id} placeholder="Warehouse Name"></input>
+                                            <input type="text" id='warehouse_id' defaultValue={warehouse.warehouse_name} placeholder="Warehouse Name"></input>
                                         </label>
                                     </div>
         
@@ -121,7 +124,7 @@ function EditWarehouse({ id }) {
                                  </label>
 
                                  <label className="details__edit-form-label" htmlFor='email'> Email
-                                     <input className='details__edit-form-input' type='text' id='email' placeholder="Email" defaultValue={warehouse.email} />
+                                     <input className='details__edit-form-input' type='text' id='email' placeholder="Email" defaultValue={warehouse.contact_email} />
                                  </label>
                                  
 

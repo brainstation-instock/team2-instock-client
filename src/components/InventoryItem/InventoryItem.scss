@@ -1,45 +1,37 @@
+
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/typography' as *;
 
-
 .edit-item {
-
     margin-left: 1rem;
     margin-right: 1rem;
     margin-top: -4rem;
     box-shadow: 0 2px 5px rgba(19, 24, 44, 0.10);
     border-radius: 4px;
-
     @include tablet {
         margin-top: -5.5rem;
         margin-left: 2rem;
         margin-right: 2rem;
     }
-
     @include desktop {
         margin-left: 8.125rem;
         margin-right: 8.125rem;
     }
 
-
     &-container {
         border-bottom: 1px solid $secondary2;
-        padding: 1.5rem 1rem;
+        border-radius: 0.25rem;
         @include display (column, flex-start, nowrap);
         gap: 0.5rem;
         border-radius: 4px 4px 0 0;
-
         @include tablet {
-            @include padding-tablet;
+            padding: 0;
         }
-
         @include desktop {
-            padding-left: 2.5rem;
-            padding-left: 2.5rem;
+            padding: 0;
         }
     }
-
     &-header {
         align-items: center;
         column-gap: 0.5rem;
@@ -50,32 +42,26 @@
         padding: 0px;
         align-items: center;
         height: 3rem;
-
+        border-radius: 0.25rem;
         @include tablet {
             padding: 2rem 2rem 1.3125rem 2rem;
         }
-
         @include desktop {
-            padding-left: 2.5rem;
+            padding: 2.75rem 2rem;
         }
     }
-
     &-body {
         display: flex;
         flex-direction: column;
-
         @include tablet {
             flex-direction: row;
         }
     }
-
     &-titlearr {
         display: flex;
         flex-direction: row-reverse;
     }
-
     &-title {
-
         color: $secondary1;
         padding-bottom: .5rem;
         width: 40%;
@@ -83,73 +69,62 @@
             @include typography-style (1.25rem, 1.75rem, 600);
         }
     }
-
     &-bodescript {
         padding-top: .5rem;
         margin-bottom: .5rem;
         flex-wrap: wrap;
         width: 80%;
     }
-
     &-category {
-
         padding-bottom: .1rem;
         margin-bottom: 1rem;
-
         @include tablet {
             width: 40%;
         }
     }
-
     &-inoroutstock {
         display: flex;
         flex-direction: row;
         margin-bottom: 1rem;
     }
-
-    &-quantity {
-        padding-left: 6rem;
+    &-inoroutstock2 {
+        width: 50%;
     }
-
+    &-quantity {
+        width: 50%;
+    }
     &-pencil {
         position: relative;
         left: 5rem;
-
         @include tablet {
             left: 25rem;
         }
-
         @include desktop{
             left:46rem;
         }
     }
-
     &-maintitle {
         position: relative;
         left: 1rem;
         h1 {
             @include typography-style (1.75rem, 2.25rem, 600);
         }
-
     }
-
     &-boxleft {
         @include tablet {
             border-right: 1px solid;
-            border-color: $secondary2;
+            border-color: $secondary1 ;
             width: 50%;
+            padding: 0 2rem;
         }
-
     }
-
     &-categorytype {
         width: 50%;
     }
-
     &-boxright {
         @include tablet {
-            padding-left: 3rem;
+            padding: 0 2rem;
+            width: 50%;
         }
     }
-
 }
